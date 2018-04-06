@@ -1,4 +1,4 @@
-//#include "connect.h"
+/#include "connect.h"
 //#include <QtSql/QtSql>
 //#include<QtSql/QSqlDatabase>
 //#include <QtSql/QSqlQuery>
