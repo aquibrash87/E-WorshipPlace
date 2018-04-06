@@ -8,5 +8,5 @@ Install:
 - The permissions aren’t set correctly just yet, so for the time being, we’ll create a index file as sudo:
     --  sudo echo "<?php phpinfo(); ?>" | sudo tee index.php
 4. Install MySQL Server:(sudo apt-get install mysql-server); Client:(sudo apt-get install mysql-client)
-5. Clone the repository : git clone https://github.com/aquibrash87/OneProj.git
+5. Clone the repository : git clone https://github.com/aquibrash87/Takbeer.git
 6. Build and Run (a) mkdir build && cd build (b) cmake .. (c) make -j
