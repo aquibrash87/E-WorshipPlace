@@ -81,7 +81,7 @@
      <string>PushButton</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>40</x>
@@ -134,6 +134,19 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QLabel" name="Magrib_2">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>250</y>
+      <width>73</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Magrib :</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">

@@ -3,6 +3,14 @@
 
 #include <QMainWindow>
 #include <QtSql/QSqlQuery>
+#include <QtSql/QtSql>
+#include<QtSql/QSqlDatabase>
+#include<iostream>
+#include<QMessageBox>
+#include<QDate>
+#include<Qt>
+#include<QLocale>
+#include<QtWebKitWidgets/QWebFrame>
 
 extern int g;
 namespace Ui {
@@ -15,6 +23,7 @@ class MainWindow : public QMainWindow
 
 public:
      QSqlQuery  query;
+ //   void connect_database();
 
 
     explicit MainWindow(QWidget *parent = 0);
