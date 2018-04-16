@@ -106,10 +106,10 @@ void connect_database(){
 
     QMessageBox msg;
    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-   db.setHostName("localhost");
-   db.setUserName("ibrahim");
-   db.setPassword("root");
-   db.setDatabaseName("db_ib");
+   db.setHostName("sql7.freemysqlhosting.net");
+   db.setUserName("sql7232980");
+   db.setPassword("emQi4QeKmX");
+   db.setDatabaseName("sql7232980");
    if(db.open()){
      msg.setText("the database connected");
      msg.exec();
