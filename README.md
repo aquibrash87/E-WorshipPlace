@@ -57,3 +57,10 @@ reference for this
 
 https://raspberrypi.stackexchange.com/questions/61078/qt-applications-dont-work-due-to-libegl/61086
 
+-information for Online Testing server :
+Server:sql7.freemysqlhosting.net
+Name:sql7232980
+Username:sql7232980
+Password:emQi4QeKmX
+PortNumber:3306
+
