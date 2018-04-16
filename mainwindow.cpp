@@ -133,8 +133,8 @@ QString* get_info(int a){struct QVariant;
 QString date1 =QDate::currentDate().addDays(a).toString(Qt::ISODate);
         qDebug()<<date1<<a;
         QSqlQuery query;
-         query.prepare("SELECT * FROM `pry_table` WHERE `date`='"+date1+"'" );
-        query.bindValue("date",date1);
+         query.prepare("SELECT `date`,TIME_FORMAT(`fjr`,'%H:%i'), TIME_FORMAT(`shrq`,'%H:%i'),TIME_FORMAT(`dhr`,'%H:%i') ,TIME_FORMAT(`asr`,'%H:%i'),TIME_FORMAT(`mgrb`,'%H:%i'),TIME_FORMAT(`ash`,'%H:%i'),`midnight`, `hadith_eng`, `hadith_de` FROM `pry_table` WHERE `date`='"+date1+"'");
+         query.bindValue("date",date1);
         query.exec();
         //qDebug(query);
         query.first();
@@ -166,6 +166,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 connect_database();
+QMainWindow::showFullScreen();
 
 
 
@@ -182,7 +183,7 @@ void MainWindow::on_pushButton_clicked()
 {
 
     //just uncomment the next function for grabbing date from Gebetszeit
-    // grabbing_times();
+ //grabbing_times();
 
 g=g+1;
 

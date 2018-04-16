@@ -6,26 +6,56 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>668</width>
-    <height>470</height>
+    <width>1034</width>
+    <height>823</height>
    </rect>
+  </property>
+  <property name="cursor">
+   <cursorShape>PointingHandCursor</cursorShape>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+background-color: rgb(0, 0, 0);
+}
+QLabel {
+color:rgb(239, 41, 41);
+	
+	font: 75 41pt &quot;Serif&quot;;
+}
+
+</string>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>40</y>
-      <width>75</width>
-      <height>158</height>
+      <x>400</x>
+      <y>80</y>
+      <width>291</width>
+      <height>451</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
       <widget class="QLabel" name="Fajer">
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+color:rgb(239, 41, 41)
+	font: 75 41pt &quot;Serif&quot;;
+}</string>
+       </property>
        <property name="text">
         <string>Fajer : </string>
        </property>
@@ -33,6 +63,12 @@
      </item>
      <item>
       <widget class="QLabel" name="Shourq">
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+color:rgb(239, 41, 41)
+	font: 75 41pt &quot;Serif&quot;;
+}</string>
+       </property>
        <property name="text">
         <string>Shrouq :</string>
        </property>
@@ -40,6 +76,12 @@
      </item>
      <item>
       <widget class="QLabel" name="Duhur">
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+color:rgb(239, 41, 41)
+	font: 75 41pt &quot;Serif&quot;;
+}</string>
+       </property>
        <property name="text">
         <string>Duhur :</string>
        </property>
@@ -47,6 +89,12 @@
      </item>
      <item>
       <widget class="QLabel" name="Asr">
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+color:rgb(239, 41, 41)
+	font: 75 41pt &quot;Serif&quot;;
+}</string>
+       </property>
        <property name="text">
         <string>Asr :</string>
        </property>
@@ -54,6 +102,12 @@
      </item>
      <item>
       <widget class="QLabel" name="Magrib">
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+color:rgb(239, 41, 41)
+	font: 75 41pt &quot;Serif&quot;;
+}</string>
+       </property>
        <property name="text">
         <string>Magrib :</string>
        </property>
@@ -61,6 +115,12 @@
      </item>
      <item>
       <widget class="QLabel" name="Asha">
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+color:rgb(239, 41, 41)
+	font: 75 41pt &quot;Serif&quot;;
+}</string>
+       </property>
        <property name="text">
         <string>Asha :</string>
        </property>
@@ -71,8 +131,8 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>250</y>
+      <x>600</x>
+      <y>610</y>
       <width>91</width>
       <height>29</height>
      </rect>
@@ -81,13 +141,13 @@
      <string>PushButton</string>
     </property>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>40</y>
-      <width>75</width>
-      <height>158</height>
+      <x>140</x>
+      <y>80</y>
+      <width>221</width>
+      <height>451</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -135,26 +195,94 @@
      </item>
     </layout>
    </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>700</x>
+      <y>60</y>
+      <width>191</width>
+      <height>491</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>الفجر</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>شروق</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>الظهر</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>العصر</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>المغرب</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_12">
+       <property name="text">
+        <string>العشاء</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
    <widget class="QLabel" name="Magrib_2">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>250</y>
-      <width>73</width>
-      <height>21</height>
+      <x>130</x>
+      <y>660</y>
+      <width>851</width>
+      <height>61</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color:rgb(239, 41, 41)
+	font: 75 41pt &quot;Serif&quot;;
+}</string>
     </property>
     <property name="text">
      <string>Magrib :</string>
     </property>
    </widget>
+   <zorder>groupBox</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>groupBox</zorder>
+   <zorder>Fajer</zorder>
+   <zorder>Duhur</zorder>
+   <zorder>label_3</zorder>
+   <zorder>groupBox_2</zorder>
+   <zorder>Magrib_2</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>668</width>
+     <width>1034</width>
      <height>26</height>
     </rect>
    </property>
