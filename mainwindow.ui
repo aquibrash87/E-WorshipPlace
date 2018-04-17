@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1034</width>
-    <height>823</height>
+    <width>1680</width>
+    <height>1050</height>
    </rect>
   </property>
   <property name="cursor">
@@ -21,7 +21,9 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow{
-background-color: rgb(0, 0, 0);
+	border-image: url(:/new/prefix1/images/background-clock.jpg) 0 0 0 0 stretch stretch;
+border-width: 0px;
+
 }
 QLabel {
 color:rgb(239, 41, 41);
@@ -38,96 +40,6 @@ color:rgb(239, 41, 41);
    <enum>QTabWidget::Rounded</enum>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QGroupBox" name="groupBox">
-    <property name="geometry">
-     <rect>
-      <x>400</x>
-      <y>80</y>
-      <width>291</width>
-      <height>451</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_2">
-     <item>
-      <widget class="QLabel" name="Fajer">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-color:rgb(239, 41, 41)
-	font: 75 41pt &quot;Serif&quot;;
-}</string>
-       </property>
-       <property name="text">
-        <string>Fajer : </string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="Shourq">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-color:rgb(239, 41, 41)
-	font: 75 41pt &quot;Serif&quot;;
-}</string>
-       </property>
-       <property name="text">
-        <string>Shrouq :</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="Duhur">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-color:rgb(239, 41, 41)
-	font: 75 41pt &quot;Serif&quot;;
-}</string>
-       </property>
-       <property name="text">
-        <string>Duhur :</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="Asr">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-color:rgb(239, 41, 41)
-	font: 75 41pt &quot;Serif&quot;;
-}</string>
-       </property>
-       <property name="text">
-        <string>Asr :</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="Magrib">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-color:rgb(239, 41, 41)
-	font: 75 41pt &quot;Serif&quot;;
-}</string>
-       </property>
-       <property name="text">
-        <string>Magrib :</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="Asha">
-       <property name="styleSheet">
-        <string notr="true">QLabel {
-color:rgb(239, 41, 41)
-	font: 75 41pt &quot;Serif&quot;;
-}</string>
-       </property>
-       <property name="text">
-        <string>Asha :</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
@@ -141,120 +53,85 @@ color:rgb(239, 41, 41)
      <string>PushButton</string>
     </property>
    </widget>
-   <widget class="QGroupBox" name="groupBox">
-    <property name="geometry">
-     <rect>
-      <x>140</x>
-      <y>80</y>
-      <width>221</width>
-      <height>451</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QLabel" name="label_2">
-       <property name="text">
-        <string>Fajer : </string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_4">
-       <property name="text">
-        <string>Shrouq :</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_3">
-       <property name="text">
-        <string>Duhur :</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>Asr :</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_6">
-       <property name="text">
-        <string>Magrib :</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_5">
-       <property name="text">
-        <string>Asha :</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QGroupBox" name="groupBox_2">
-    <property name="geometry">
-     <rect>
-      <x>700</x>
-      <y>60</y>
-      <width>191</width>
-      <height>491</height>
-     </rect>
-    </property>
-    <layout class="QVBoxLayout" name="verticalLayout_3">
-     <item>
-      <widget class="QLabel" name="label_7">
-       <property name="text">
-        <string>الفجر</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_8">
-       <property name="text">
-        <string>شروق</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_9">
-       <property name="text">
-        <string>الظهر</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_10">
-       <property name="text">
-        <string>العصر</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_11">
-       <property name="text">
-        <string>المغرب</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="label_12">
-       <property name="text">
-        <string>العشاء</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
    <widget class="QLabel" name="Magrib_2">
     <property name="geometry">
      <rect>
-      <x>130</x>
-      <y>660</y>
+      <x>80</x>
+      <y>170</y>
       <width>851</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color:rgb( 255, 255, 255)
+	font: 75 41pt &quot;Serif&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>Magrib :</string>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1680</width>
+      <height>1050</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/new/prefix1/images/background-clock.jpg);</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Fajer">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>30</y>
+      <width>161</width>
+      <height>62</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color:rgb(239, 41, 41)
+	font: 75 41pt &quot;Serif&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>00:00</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Shourq">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>120</y>
+      <width>191</width>
+      <height>76</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color:rgb(239, 41, 41)
+	font: 75 41pt &quot;Serif&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>00:00</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Duhur">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>230</y>
+      <width>191</width>
       <height>61</height>
      </rect>
     </property>
@@ -265,37 +142,385 @@ color:rgb(239, 41, 41)
 }</string>
     </property>
     <property name="text">
-     <string>Magrib :</string>
+     <string>00:00</string>
     </property>
    </widget>
-   <zorder>groupBox</zorder>
+   <widget class="QLabel" name="Asr">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>340</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color:rgb(239, 41, 41)
+	font: 75 41pt &quot;Serif&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>00:00</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Magrib">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>430</y>
+      <width>201</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color:rgb(239, 41, 41)
+	font: 75 41pt &quot;Serif&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>00:00</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Asha">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>540</y>
+      <width>191</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+color:rgb(239, 41, 41)
+	font: 75 41pt &quot;Serif&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>00:00</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>1390</x>
+      <y>10</y>
+      <width>131</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;</string>
+    </property>
+    <property name="text">
+     <string>الفجر</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>1390</x>
+      <y>110</y>
+      <width>141</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;</string>
+    </property>
+    <property name="text">
+     <string>شروق</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>1390</x>
+      <y>220</y>
+      <width>141</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;</string>
+    </property>
+    <property name="text">
+     <string>الظهر</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>1400</x>
+      <y>310</y>
+      <width>131</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;</string>
+    </property>
+    <property name="text">
+     <string>العصر</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>1390</x>
+      <y>410</y>
+      <width>151</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;</string>
+    </property>
+    <property name="text">
+     <string>المغرب</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>1390</x>
+      <y>530</y>
+      <width>151</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;</string>
+    </property>
+    <property name="text">
+     <string>العشاء</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>910</x>
+      <y>530</y>
+      <width>197</width>
+      <height>62</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Ashaa</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>940</x>
+      <y>30</y>
+      <width>151</width>
+      <height>76</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Fajer </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>896</x>
+      <y>120</y>
+      <width>211</width>
+      <height>96</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Shrouq </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>240</y>
+      <width>197</width>
+      <height>54</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Duhur </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>940</x>
+      <y>320</y>
+      <width>101</width>
+      <height>84</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Asr </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>886</x>
+      <y>430</y>
+      <width>211</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);
+font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Magrib</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>680</y>
+      <width>1221</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Al-Jazeera-Arabic</family>
+      <pointsize>16</pointsize>
+      <weight>9</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 16pt &quot;Al-Jazeera-Arabic&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>396</x>
+      <y>840</y>
+      <width>1141</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 16pt &quot;Al-Jazeera-Arabic&quot;;
+color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>graphicsView</zorder>
    <zorder>pushButton</zorder>
-   <zorder>groupBox</zorder>
    <zorder>Fajer</zorder>
-   <zorder>Duhur</zorder>
+   <zorder>Asr</zorder>
+   <zorder>Magrib</zorder>
+   <zorder>Asha</zorder>
+   <zorder>label_9</zorder>
+   <zorder>label_2</zorder>
    <zorder>label_3</zorder>
-   <zorder>groupBox_2</zorder>
+   <zorder>label_14</zorder>
    <zorder>Magrib_2</zorder>
+   <zorder>Shourq</zorder>
+   <zorder>Duhur</zorder>
+   <zorder>label_10</zorder>
+   <zorder>label_11</zorder>
+   <zorder>label_12</zorder>
+   <zorder>label_13</zorder>
+   <zorder>label_8</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label_6</zorder>
+   <zorder>label_7</zorder>
+   <zorder>label</zorder>
   </widget>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1034</width>
-     <height>26</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QToolBar" name="mainToolBar">
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-  </widget>
-  <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

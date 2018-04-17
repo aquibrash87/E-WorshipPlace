@@ -49,9 +49,11 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = main.cpp \
-		mainwindow.cpp moc_mainwindow.cpp
+		mainwindow.cpp qrc_resources.cpp \
+		moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
+		qrc_resources.o \
 		moc_mainwindow.o
 DIST          = /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/common/unix.conf \
@@ -199,6 +201,7 @@ Makefile: datebase.pro /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++/qmake.
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/lex.prf \
 		datebase.pro \
+		resources.qrc \
 		/usr/lib/arm-linux-gnueabihf/libQt5WebKitWidgets.prl \
 		/usr/lib/arm-linux-gnueabihf/libQt5Widgets.prl \
 		/usr/lib/arm-linux-gnueabihf/libQt5WebKit.prl \
@@ -274,6 +277,7 @@ Makefile: datebase.pro /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-g++/qmake.
 /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/yacc.prf:
 /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/lex.prf:
 datebase.pro:
+resources.qrc:
 /usr/lib/arm-linux-gnueabihf/libQt5WebKitWidgets.prl:
 /usr/lib/arm-linux-gnueabihf/libQt5Widgets.prl:
 /usr/lib/arm-linux-gnueabihf/libQt5WebKit.prl:
@@ -295,6 +299,7 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
+	$(COPY_FILE) --parents resources.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.h $(DISTDIR)/
 	$(COPY_FILE) --parents main.cpp mainwindow.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
@@ -320,8 +325,14 @@ check: first
 
 benchmark: first
 
-compiler_rcc_make_all:
+compiler_rcc_make_all: qrc_resources.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) qrc_resources.cpp
+qrc_resources.cpp: resources.qrc \
+		/usr/lib/arm-linux-gnueabihf/qt5/bin/rcc \
+		images/background-clock.jpg
+	/usr/lib/arm-linux-gnueabihf/qt5/bin/rcc -name resources resources.qrc -o qrc_resources.cpp
+
 compiler_moc_header_make_all: moc_mainwindow.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mainwindow.cpp
@@ -344,7 +355,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
 
@@ -354,6 +365,9 @@ main.o: main.cpp mainwindow.h
 mainwindow.o: mainwindow.cpp mainwindow.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
+
+qrc_resources.o: qrc_resources.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_resources.o qrc_resources.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

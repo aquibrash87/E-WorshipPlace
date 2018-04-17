@@ -60,7 +60,14 @@ https://raspberrypi.stackexchange.com/questions/61078/qt-applications-dont-work-
 -information for Online Testing server :
 Server:sql7.freemysqlhosting.net
 Name:sql7232980
+
 Username:sql7232980
+
 Password:emQi4QeKmX
+
 PortNumber:3306
+-adding the Aljazeera font to the /usr/local/share/fonts
+
+
+
 

@@ -84,9 +84,11 @@ void grabbing_times(){
          date1.setDate(current_date.year(),current_date.month(),1);
          QString date = date1.addDays(i).toString(Qt::ISODate);
                          QSqlQuery query1;
+QString ha="";
+QString he="";
 
 
-   query1.prepare("INSERT INTO `pry_table` (`date`, `fjr`, `shrq`, `dhr`, `asr`, `mgrb`, `ash`, `midnight`, `hadith_eng`, `hadith_de`) VALUES ('"+date+"', '"+fajer+"', '"+shrouq+"', '"+dhuhr+"', '"+assr+"', '"+mgrb+"', '"+ishaa+"', '', '', '')");
+   query1.prepare("INSERT INTO `pry_table` (`date`, `fjr`, `shrq`, `dhr`, `asr`, `mgrb`, `ash`, `midnight`, `hadith_eng`, `hadith_de`) VALUES ('"+date+"', '"+fajer+"', '"+shrouq+"', '"+dhuhr+"', '"+assr+"', '"+mgrb+"', '"+ishaa+"', '', '"+ha+"', '"+he+"')");
    query1.bindValue("date",date);
    query1.bindValue("fajer",fajer);
    query1.bindValue("shrouq",shrouq);
@@ -94,6 +96,8 @@ void grabbing_times(){
    query1.bindValue("assr",assr);
    query1.bindValue("mgrb",mgrb);
    query1.bindValue("ishaa",ishaa);
+    query1.bindValue("ha",ha);
+     query1.bindValue("he",he);
    query1.exec();
 
 
@@ -146,13 +150,19 @@ QString date1 =QDate::currentDate().addDays(a).toString(Qt::ISODate);
     QString asr= query.value(4).toString();
     QString mgrb= query.value(5).toString();
     QString ash= query.value(6).toString();
-    QString* pray= new QString[6];
+    QString ha= query.value(8).toString();
+    QString he= query.value(9).toString();
+
+    QString* pray= new QString[8];
     pray[0]=fajer;
     pray[1]=shrq;
     pray[2]=dhr;
     pray[3]=asr;
     pray[4]=mgrb;
     pray[5]=ash;
+    pray[6]=ha;
+    pray[7]=he;
+
 return pray;
     }}
 
@@ -198,6 +208,9 @@ QString date =QDate::currentDate().addDays(g).toString(Qt::SystemLocaleLongDate)
     ui->Asr->setText(pray[3]);
     ui->Magrib->setText(pray[4]);
     ui->Asha->setText(pray[5]);
+    ui->label_13->setText(pray[6]);
+    ui->label_14->setText(pray[7]);
+
 
 //struct to fetch the data from MySql
     }
