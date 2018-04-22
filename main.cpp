@@ -7,7 +7,6 @@
 #include<QVariant>
 #include<QMessageBox>
 #include<iostream>
-#include<digitalclock.h>
 
 using namespace std;
 int  main(int argc, char *argv[])

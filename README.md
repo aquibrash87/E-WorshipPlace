@@ -68,6 +68,10 @@ Password:emQi4QeKmX
 PortNumber:3306
 -adding the Aljazeera font to the /usr/local/share/fonts
 
+*************
+adding the Clock as Timer Interrupt refresh each second 
+*************
+
 
 
 
