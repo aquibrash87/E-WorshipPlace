@@ -23,7 +23,7 @@ class MainWindow : public QMainWindow
 
 public:
      QSqlQuery  query;
- //   void connect_database();
+
 
 
     explicit MainWindow(QWidget *parent = 0);
@@ -31,9 +31,12 @@ public:
 
 private slots:
     void on_pushButton_clicked();
+    void showTime();
+
 
 private:
     Ui::MainWindow *ui;
 };
 
 #endif // MAINWINDOW_H
+

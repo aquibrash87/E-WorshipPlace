@@ -9,13 +9,20 @@
 #include<Qt>
 #include<QLocale>
 #include<QtWebKitWidgets/QWebFrame>
-
-
-//#include<QtWebKitWidgets/QWebFrame>
 #include<QtWebKit/QWebElement>
-
 #include<QtWebKitWidgets/QtWebKitWidgets>
+#include<QTimer>
+#include<QDateTime>
+#include<QVector>
 using namespace  std;
+void MainWindow::showTime()
+{
+   QTime time =  QTime::currentTime();
+   QString text = time.toString("hh:mm");
+   if ((time.second() % 2) == 0)
+       text[2] = ' ';
+   ui->min->setText(text);
+}
 
 void grabbing_times(){
 
@@ -110,10 +117,10 @@ void connect_database(){
 
     QMessageBox msg;
    QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
-   db.setHostName("sql7.freemysqlhosting.net");
-   db.setUserName("sql7232980");
-   db.setPassword("emQi4QeKmX");
-   db.setDatabaseName("sql7232980");
+   db.setHostName("localhost");
+   db.setUserName("ibrahim");
+   db.setPassword("root");
+   db.setDatabaseName("db_ib");
    if(db.open()){
      msg.setText("the database connected");
      msg.exec();
@@ -176,9 +183,10 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 connect_database();
+QTimer *timer = new QTimer();
+connect(timer, SIGNAL(timeout()),this,SLOT(showTime()));
+timer->start(1000);
 QMainWindow::showFullScreen();
-
-
 
 }
 
@@ -197,9 +205,9 @@ void MainWindow::on_pushButton_clicked()
 
 g=g+1;
 
-QString date =QDate::currentDate().addDays(g).toString(Qt::SystemLocaleLongDate);
-   ui->Magrib_2->setText(date);
-
+    QString Date_interface= QDate::currentDate().toString(Qt::ISODate);
+    ui->Magrib_2->setText(Date_interface);
+ //   ui->Magrib_3->setText(days_arabic[day_number]);
     QString* pray= new QString[7];
     pray=get_info(g);
     ui->Fajer->setText(pray[0]);

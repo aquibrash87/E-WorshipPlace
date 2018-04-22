@@ -21,7 +21,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow{
-	border-image: url(:/new/prefix1/images/background-clock.jpg) 0 0 0 0 stretch stretch;
+border-image: url(:/new/prefix1/images/background-clock.jpg) 0 0 0 0 stretch stretch;
 border-width: 0px;
 
 }
@@ -56,36 +56,17 @@ color:rgb(239, 41, 41);
    <widget class="QLabel" name="Magrib_2">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>170</y>
-      <width>851</width>
+      <x>310</x>
+      <y>190</y>
+      <width>301</width>
       <height>61</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel {
-color:rgb( 255, 255, 255)
-	font: 75 41pt &quot;Serif&quot;;
-}</string>
+     <string notr="true">font: 75 36pt &quot;Al-Jazeera-Arabic&quot;;</string>
     </property>
     <property name="text">
      <string>Magrib :</string>
-    </property>
-   </widget>
-   <widget class="QGraphicsView" name="graphicsView">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>1680</width>
-      <height>1050</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-image: url(:/new/prefix1/images/background-clock.jpg);</string>
     </property>
    </widget>
    <widget class="QLabel" name="Fajer">
@@ -273,9 +254,9 @@ font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;</string>
    <widget class="QLabel" name="label_11">
     <property name="geometry">
      <rect>
-      <x>1390</x>
+      <x>1380</x>
       <y>410</y>
-      <width>151</width>
+      <width>161</width>
       <height>81</height>
      </rect>
     </property>
@@ -377,7 +358,7 @@ font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;
 </string>
     </property>
     <property name="text">
-     <string>Duhur </string>
+     <string>Dhuhr </string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -422,8 +403,8 @@ font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;
     <property name="geometry">
      <rect>
       <x>140</x>
-      <y>680</y>
-      <width>1221</width>
+      <y>690</y>
+      <width>1191</width>
       <height>141</height>
      </rect>
     </property>
@@ -450,7 +431,7 @@ color: rgb(255, 255, 255);</string>
      <string>TextLabel</string>
     </property>
     <property name="textFormat">
-     <enum>Qt::PlainText</enum>
+     <enum>Qt::RichText</enum>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -479,13 +460,13 @@ color: rgb(255, 255, 255);</string>
      <enum>QFrame::NoFrame</enum>
     </property>
     <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
+     <enum>QFrame::Raised</enum>
     </property>
     <property name="text">
      <string>TextLabel</string>
     </property>
     <property name="textFormat">
-     <enum>Qt::PlainText</enum>
+     <enum>Qt::RichText</enum>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -497,7 +478,48 @@ color: rgb(255, 255, 255);</string>
      <bool>true</bool>
     </property>
    </widget>
-   <zorder>graphicsView</zorder>
+   <widget class="QLabel" name="min">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>30</y>
+      <width>381</width>
+      <height>181</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Al-Jazeera-Arabic</family>
+      <pointsize>100</pointsize>
+      <weight>9</weight>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 100pt &quot;Al-Jazeera-Arabic&quot;;
+</string>
+    </property>
+    <property name="text">
+     <string>00:00</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_16">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>250</y>
+      <width>301</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 36pt &quot;Al-Jazeera-Arabic&quot;;</string>
+    </property>
+    <property name="text">
+     <string>الموافق :</string>
+    </property>
+   </widget>
    <zorder>pushButton</zorder>
    <zorder>Fajer</zorder>
    <zorder>Asr</zorder>
@@ -520,6 +542,8 @@ color: rgb(255, 255, 255);</string>
    <zorder>label_6</zorder>
    <zorder>label_7</zorder>
    <zorder>label</zorder>
+   <zorder>min</zorder>
+   <zorder>label_16</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
