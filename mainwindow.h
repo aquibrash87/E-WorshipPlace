@@ -12,7 +12,9 @@
 #include<QLocale>
 #include<QtWebKitWidgets/QWebFrame>
 
-extern int g;
+QString *get_info();// function decleration
+void grabbing_times();
+
 namespace Ui {
 class MainWindow;
 }
@@ -23,6 +25,12 @@ class MainWindow : public QMainWindow
 
 public:
      QSqlQuery  query;
+     //flags for events
+     bool eventDayUpdate=false;
+     bool eventMonthUpdate=false;
+     int storedMonth=4;
+
+
 
 
 
