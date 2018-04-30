@@ -18,6 +18,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QWidget>
+#include <dynamicfontsizelabel.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -45,10 +46,10 @@ public:
     QLabel *label_3;
     QLabel *label;
     QLabel *label_6;
-    QLabel *label_14;
     QLabel *min;
     QLabel *label_16;
-    QLabel *label_15;
+    DynamicFontSizeLabel *label_13;
+    DynamicFontSizeLabel *label_15;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -67,11 +68,10 @@ public:
 "border-width: 0px;\n"
 "\n"
 "}\n"
-"QLabel {\n"
 "color:rgb(239, 41, 41);\n"
 "	\n"
 "	font: 75 41pt \"Serif\";\n"
-"}\n"
+"\n"
 "\n"
 ""));
         MainWindow->setDocumentMode(false);
@@ -83,50 +83,50 @@ public:
         pushButton->setGeometry(QRect(0, 1020, 61, 29));
         Magrib_2 = new QLabel(centralWidget);
         Magrib_2->setObjectName(QStringLiteral("Magrib_2"));
-        Magrib_2->setGeometry(QRect(310, 190, 301, 61));
-        Magrib_2->setStyleSheet(QStringLiteral("font: 75 36pt \"Al-Jazeera-Arabic\";"));
+        Magrib_2->setGeometry(QRect(290, 180, 301, 61));
+        Magrib_2->setStyleSheet(QLatin1String("color: rgb(239, 41, 41);\n"
+"font: 75 36pt \"Al-Jazeera-Arabic\";"));
+        Magrib_2->setAlignment(Qt::AlignCenter);
         Fajer = new QLabel(centralWidget);
         Fajer->setObjectName(QStringLiteral("Fajer"));
         Fajer->setGeometry(QRect(1180, 30, 161, 62));
-        Fajer->setStyleSheet(QLatin1String("QLabel {\n"
-"color:rgb(239, 41, 41)\n"
+        Fajer->setStyleSheet(QLatin1String("\n"
+"color:rgb(239, 41, 41);\n"
 "	font: 75 41pt \"Serif\";\n"
-"}"));
+""));
         Shourq = new QLabel(centralWidget);
         Shourq->setObjectName(QStringLiteral("Shourq"));
         Shourq->setGeometry(QRect(1180, 120, 191, 76));
-        Shourq->setStyleSheet(QLatin1String("QLabel {\n"
-"color:rgb(239, 41, 41)\n"
+        Shourq->setStyleSheet(QLatin1String("\n"
+"color:rgb(239, 41, 41);\n"
 "	font: 75 41pt \"Serif\";\n"
-"}"));
+""));
         Duhur = new QLabel(centralWidget);
         Duhur->setObjectName(QStringLiteral("Duhur"));
         Duhur->setGeometry(QRect(1180, 230, 191, 61));
-        Duhur->setStyleSheet(QLatin1String("QLabel {\n"
-"color:rgb(239, 41, 41)\n"
+        Duhur->setStyleSheet(QLatin1String("\n"
+"color:rgb(239, 41, 41);\n"
 "	font: 75 41pt \"Serif\";\n"
-"}"));
+""));
         Asr = new QLabel(centralWidget);
         Asr->setObjectName(QStringLiteral("Asr"));
         Asr->setGeometry(QRect(1180, 340, 161, 41));
-        Asr->setStyleSheet(QLatin1String("QLabel {\n"
-"color:rgb(239, 41, 41)\n"
+        Asr->setStyleSheet(QLatin1String("\n"
+"color:rgb(239, 41, 41);\n"
 "	font: 75 41pt \"Serif\";\n"
-"}"));
+""));
         Magrib = new QLabel(centralWidget);
         Magrib->setObjectName(QStringLiteral("Magrib"));
         Magrib->setGeometry(QRect(1180, 430, 201, 71));
-        Magrib->setStyleSheet(QLatin1String("QLabel {\n"
-"color:rgb(239, 41, 41)\n"
+        Magrib->setStyleSheet(QLatin1String("\n"
+"color:rgb(239, 41, 41);\n"
 "	font: 75 41pt \"Serif\";\n"
-"}"));
+""));
         Asha = new QLabel(centralWidget);
         Asha->setObjectName(QStringLiteral("Asha"));
         Asha->setGeometry(QRect(1180, 540, 191, 51));
-        Asha->setStyleSheet(QLatin1String("QLabel {\n"
-"color:rgb(239, 41, 41)\n"
-"	font: 75 41pt \"Serif\";\n"
-"}"));
+        Asha->setStyleSheet(QLatin1String("color:rgb(239, 41, 41);\n"
+"	font: 75 41pt \"Serif\";"));
         label_7 = new QLabel(centralWidget);
         label_7->setObjectName(QStringLiteral("label_7"));
         label_7->setGeometry(QRect(1390, 10, 131, 91));
@@ -199,20 +199,9 @@ public:
 "font: 75 40pt \"Al-Jazeera-Arabic\";\n"
 "\n"
 ""));
-        label_14 = new QLabel(centralWidget);
-        label_14->setObjectName(QStringLiteral("label_14"));
-        label_14->setGeometry(QRect(396, 840, 1141, 121));
-        label_14->setStyleSheet(QLatin1String("font: 75 12pt \"Al-Jazeera-Arabic\";\n"
-"color: rgb(255, 255, 255);"));
-        label_14->setFrameShape(QFrame::NoFrame);
-        label_14->setFrameShadow(QFrame::Raised);
-        label_14->setTextFormat(Qt::RichText);
-        label_14->setScaledContents(true);
-        label_14->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
-        label_14->setWordWrap(true);
         min = new QLabel(centralWidget);
         min->setObjectName(QStringLiteral("min"));
-        min->setGeometry(QRect(290, 30, 381, 181));
+        min->setGeometry(QRect(280, 20, 381, 181));
         QFont font;
         font.setFamily(QStringLiteral("Al-Jazeera-Arabic"));
         font.setPointSize(100);
@@ -221,26 +210,44 @@ public:
         font.setWeight(9);
         min->setFont(font);
         min->setStyleSheet(QLatin1String("font: 75 100pt \"Al-Jazeera-Arabic\";\n"
+"color: rgb(239, 41, 41);\n"
 ""));
         label_16 = new QLabel(centralWidget);
         label_16->setObjectName(QStringLiteral("label_16"));
-        label_16->setGeometry(QRect(310, 250, 301, 61));
-        label_16->setStyleSheet(QStringLiteral("font: 75 36pt \"Al-Jazeera-Arabic\";"));
-        label_15 = new QLabel(centralWidget);
-        label_15->setObjectName(QStringLiteral("label_15"));
-        label_15->setGeometry(QRect(180, 710, 1141, 121));
-        QSizePolicy sizePolicy1(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
+        label_16->setGeometry(QRect(180, 240, 531, 61));
+        label_16->setLayoutDirection(Qt::LeftToRight);
+        label_16->setStyleSheet(QLatin1String("color: rgb(239, 41, 41);\n"
+"font: 75 36pt \"Al-Jazeera-Arabic\";\n"
+"center\n"
+""));
+        label_16->setTextFormat(Qt::AutoText);
+        label_16->setAlignment(Qt::AlignCenter);
+        label_13 = new DynamicFontSizeLabel(centralWidget);
+        label_13->setObjectName(QStringLiteral("label_13"));
+        label_13->setGeometry(QRect(140, 680, 1231, 131));
+        QSizePolicy sizePolicy1(QSizePolicy::Fixed, QSizePolicy::Fixed);
         sizePolicy1.setHorizontalStretch(0);
         sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(label_13->sizePolicy().hasHeightForWidth());
+        label_13->setSizePolicy(sizePolicy1);
+        label_13->setMinimumSize(QSize(400, 50));
+        QFont font1;
+        font1.setFamily(QStringLiteral("Al-Jazeera-Arabic"));
+        label_13->setFont(font1);
+        label_13->setStyleSheet(QStringLiteral("color: rgb(255, 255, 255);"));
+        label_13->setFrameShape(QFrame::NoFrame);
+        label_13->setTextFormat(Qt::PlainText);
+        label_13->setWordWrap(true);
+        label_15 = new DynamicFontSizeLabel(centralWidget);
+        label_15->setObjectName(QStringLiteral("label_15"));
+        label_15->setGeometry(QRect(380, 830, 1161, 131));
         sizePolicy1.setHeightForWidth(label_15->sizePolicy().hasHeightForWidth());
         label_15->setSizePolicy(sizePolicy1);
-        label_15->setStyleSheet(QLatin1String("font: 75 12pt \"Al-Jazeera-Arabic\";\n"
-"color: rgb(255, 255, 255);"));
+        label_15->setMinimumSize(QSize(400, 50));
+        label_15->setFont(font1);
+        label_15->setStyleSheet(QStringLiteral("color: rgb(255, 255, 255);"));
         label_15->setFrameShape(QFrame::NoFrame);
-        label_15->setFrameShadow(QFrame::Raised);
-        label_15->setTextFormat(Qt::RichText);
-        label_15->setScaledContents(true);
-        label_15->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop);
+        label_15->setTextFormat(Qt::PlainText);
         label_15->setWordWrap(true);
         MainWindow->setCentralWidget(centralWidget);
         pushButton->raise();
@@ -251,7 +258,6 @@ public:
         label_9->raise();
         label_2->raise();
         label_3->raise();
-        label_14->raise();
         Magrib_2->raise();
         Shourq->raise();
         Duhur->raise();
@@ -266,6 +272,7 @@ public:
         label->raise();
         min->raise();
         label_16->raise();
+        label_13->raise();
         label_15->raise();
 
         retranslateUi(MainWindow);
@@ -277,7 +284,7 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
         pushButton->setText(QApplication::translate("MainWindow", "G", Q_NULLPTR));
-        Magrib_2->setText(QApplication::translate("MainWindow", "Magrib :", Q_NULLPTR));
+        Magrib_2->setText(QApplication::translate("MainWindow", "Date", Q_NULLPTR));
         Fajer->setText(QApplication::translate("MainWindow", "00:00", Q_NULLPTR));
         Shourq->setText(QApplication::translate("MainWindow", "00:00", Q_NULLPTR));
         Duhur->setText(QApplication::translate("MainWindow", "00:00", Q_NULLPTR));
@@ -296,10 +303,10 @@ public:
         label_3->setText(QApplication::translate("MainWindow", "Dhuhr ", Q_NULLPTR));
         label->setText(QApplication::translate("MainWindow", "Asr ", Q_NULLPTR));
         label_6->setText(QApplication::translate("MainWindow", "Magrib", Q_NULLPTR));
-        label_14->setText(QApplication::translate("MainWindow", "TextLabel", Q_NULLPTR));
         min->setText(QApplication::translate("MainWindow", "00:00", Q_NULLPTR));
-        label_16->setText(QApplication::translate("MainWindow", "\330\247\331\204\331\205\331\210\330\247\331\201\331\202 :", Q_NULLPTR));
-        label_15->setText(QApplication::translate("MainWindow", "hallo world how are you", Q_NULLPTR));
+        label_16->setText(QApplication::translate("MainWindow", "\330\247\331\204\330\252\330\247\330\261\331\212\330\256 \330\247\331\204\331\207\330\254\330\261\331\212 ", Q_NULLPTR));
+        label_13->setText(QApplication::translate("MainWindow", "\330\255\330\257\331\212\330\253 \330\247\331\204\331\212\331\210\331\205 \330\250\330\247\331\204\331\204\330\272\330\251 \330\247\331\204\330\271\330\261\330\250\331\212\330\251", Q_NULLPTR));
+        label_15->setText(QApplication::translate("MainWindow", "Hadith English", Q_NULLPTR));
     } // retranslateUi
 
 };
