@@ -73,10 +73,8 @@ cd qt-build
 Click [Here](https://raspberrypi.stackexchange.com/questions/61078/qt-applications-dont-work-due-to-libegl/61086)<br />
 
 **_information for Online Testing server :_**<br />
-**Server:**_sql7.freemysqlhosting.net_ <br />
-**Name:**_sql7232980_ <br />
-**Username:**_Sql7232980_<br />
-**Password:**_emQi4QeKmX_<br />
-**PortNumber:**_3306_<br />
+
+** under Construction**<br />
+
 
 *adding the Aljazeera font to the /usr/local/share/fonts*
