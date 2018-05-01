@@ -545,17 +545,165 @@ center
      <bool>true</bool>
     </property>
    </widget>
-   <zorder>pushButton</zorder>
-   <zorder>Fajer</zorder>
-   <zorder>Asr</zorder>
-   <zorder>Magrib</zorder>
+   <widget class="QGraphicsView" name="graphicsView">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>16777215</width>
+      <height>16777215</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QGraphicsView" name="graphicsView_2">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>470</y>
+      <width>291</width>
+      <height>321</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/new/prefix1/images/No-Mobile-Phone-Sign.jpg);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_14">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>520</y>
+      <width>1221</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 52pt &quot;Al-Jazeera-Arabic&quot;;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;الرجاء وضع الموبايل على وضعية الصامت&lt;/p&gt;&lt;p&gt;Please put your Phone on Slient &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::RichText</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="AqamaLabelCounter">
+    <property name="geometry">
+     <rect>
+      <x>1020</x>
+      <y>270</y>
+      <width>361</width>
+      <height>221</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 125pt &quot;Al-Jazeera-Arabic&quot;;</string>
+    </property>
+    <property name="text">
+     <string>00</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="DynamicFontSizeLabel" name="time_remain_en">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>40</y>
+      <width>801</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Al-Jazeera-Arabic</family>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Time remain for Aqam&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::RichText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="time_value">
+    <property name="geometry">
+     <rect>
+      <x>900</x>
+      <y>320</y>
+      <width>131</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 17pt &quot;Al-Jazeera-Arabic&quot;;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Minutes&lt;/p&gt;&lt;p&gt;دقيقة&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::RichText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="time_remain_ar">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>140</y>
+      <width>861</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 45pt &quot;Al-Jazeera-Arabic&quot;;</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;الوقت المتبقي لإقامة صلاة &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::RichText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <zorder>Shourq</zorder>
    <zorder>Asha</zorder>
+   <zorder>Asr</zorder>
+   <zorder>Fajer</zorder>
+   <zorder>Duhur</zorder>
+   <zorder>Magrib</zorder>
+   <zorder>graphicsView</zorder>
+   <zorder>pushButton</zorder>
    <zorder>label_9</zorder>
    <zorder>label_2</zorder>
    <zorder>label_3</zorder>
    <zorder>Magrib_2</zorder>
-   <zorder>Shourq</zorder>
-   <zorder>Duhur</zorder>
    <zorder>label_10</zorder>
    <zorder>label_11</zorder>
    <zorder>label_12</zorder>
@@ -569,6 +717,12 @@ center
    <zorder>label_16</zorder>
    <zorder>label_13</zorder>
    <zorder>label_15</zorder>
+   <zorder>graphicsView_2</zorder>
+   <zorder>label_14</zorder>
+   <zorder>AqamaLabelCounter</zorder>
+   <zorder>time_remain_en</zorder>
+   <zorder>time_value</zorder>
+   <zorder>time_remain_ar</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

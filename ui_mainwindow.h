@@ -13,6 +13,7 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QGraphicsView>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
@@ -50,6 +51,13 @@ public:
     QLabel *label_16;
     DynamicFontSizeLabel *label_13;
     DynamicFontSizeLabel *label_15;
+    QGraphicsView *graphicsView;
+    QGraphicsView *graphicsView_2;
+    QLabel *label_14;
+    QLabel *AqamaLabelCounter;
+    DynamicFontSizeLabel *time_remain_en;
+    QLabel *time_value;
+    QLabel *time_remain_ar;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -249,18 +257,63 @@ public:
         label_15->setFrameShape(QFrame::NoFrame);
         label_15->setTextFormat(Qt::PlainText);
         label_15->setWordWrap(true);
+        graphicsView = new QGraphicsView(centralWidget);
+        graphicsView->setObjectName(QStringLiteral("graphicsView"));
+        graphicsView->setEnabled(true);
+        graphicsView->setGeometry(QRect(0, 0, 16777215, 16777215));
+        QSizePolicy sizePolicy2(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        sizePolicy2.setHorizontalStretch(0);
+        sizePolicy2.setVerticalStretch(0);
+        sizePolicy2.setHeightForWidth(graphicsView->sizePolicy().hasHeightForWidth());
+        graphicsView->setSizePolicy(sizePolicy2);
+        graphicsView->setAutoFillBackground(false);
+        graphicsView_2 = new QGraphicsView(centralWidget);
+        graphicsView_2->setObjectName(QStringLiteral("graphicsView_2"));
+        graphicsView_2->setGeometry(QRect(50, 470, 291, 321));
+        graphicsView_2->setStyleSheet(QStringLiteral("border-image: url(:/new/prefix1/images/No-Mobile-Phone-Sign.jpg);"));
+        graphicsView_2->setFrameShape(QFrame::NoFrame);
+        label_14 = new QLabel(centralWidget);
+        label_14->setObjectName(QStringLiteral("label_14"));
+        label_14->setGeometry(QRect(410, 520, 1221, 241));
+        label_14->setStyleSheet(QStringLiteral("font: 75 52pt \"Al-Jazeera-Arabic\";"));
+        label_14->setTextFormat(Qt::RichText);
+        AqamaLabelCounter = new QLabel(centralWidget);
+        AqamaLabelCounter->setObjectName(QStringLiteral("AqamaLabelCounter"));
+        AqamaLabelCounter->setGeometry(QRect(1020, 270, 361, 221));
+        AqamaLabelCounter->setStyleSheet(QStringLiteral("font: 75 125pt \"Al-Jazeera-Arabic\";"));
+        AqamaLabelCounter->setAlignment(Qt::AlignCenter);
+        time_remain_en = new DynamicFontSizeLabel(centralWidget);
+        time_remain_en->setObjectName(QStringLiteral("time_remain_en"));
+        time_remain_en->setGeometry(QRect(710, 40, 801, 111));
+        time_remain_en->setFont(font1);
+        time_remain_en->setStyleSheet(QStringLiteral(""));
+        time_remain_en->setTextFormat(Qt::RichText);
+        time_remain_en->setAlignment(Qt::AlignCenter);
+        time_value = new QLabel(centralWidget);
+        time_value->setObjectName(QStringLiteral("time_value"));
+        time_value->setGeometry(QRect(900, 320, 131, 101));
+        time_value->setStyleSheet(QStringLiteral("font: 75 17pt \"Al-Jazeera-Arabic\";"));
+        time_value->setTextFormat(Qt::RichText);
+        time_value->setAlignment(Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter);
+        time_remain_ar = new QLabel(centralWidget);
+        time_remain_ar->setObjectName(QStringLiteral("time_remain_ar"));
+        time_remain_ar->setGeometry(QRect(690, 140, 861, 111));
+        time_remain_ar->setStyleSheet(QStringLiteral("font: 75 45pt \"Al-Jazeera-Arabic\";"));
+        time_remain_ar->setTextFormat(Qt::RichText);
+        time_remain_ar->setAlignment(Qt::AlignCenter);
         MainWindow->setCentralWidget(centralWidget);
-        pushButton->raise();
-        Fajer->raise();
-        Asr->raise();
-        Magrib->raise();
+        Shourq->raise();
         Asha->raise();
+        Asr->raise();
+        Fajer->raise();
+        Duhur->raise();
+        Magrib->raise();
+        graphicsView->raise();
+        pushButton->raise();
         label_9->raise();
         label_2->raise();
         label_3->raise();
         Magrib_2->raise();
-        Shourq->raise();
-        Duhur->raise();
         label_10->raise();
         label_11->raise();
         label_12->raise();
@@ -274,6 +327,12 @@ public:
         label_16->raise();
         label_13->raise();
         label_15->raise();
+        graphicsView_2->raise();
+        label_14->raise();
+        AqamaLabelCounter->raise();
+        time_remain_en->raise();
+        time_value->raise();
+        time_remain_ar->raise();
 
         retranslateUi(MainWindow);
 
@@ -307,6 +366,11 @@ public:
         label_16->setText(QApplication::translate("MainWindow", "\330\247\331\204\330\252\330\247\330\261\331\212\330\256 \330\247\331\204\331\207\330\254\330\261\331\212 ", Q_NULLPTR));
         label_13->setText(QApplication::translate("MainWindow", "\330\255\330\257\331\212\330\253 \330\247\331\204\331\212\331\210\331\205 \330\250\330\247\331\204\331\204\330\272\330\251 \330\247\331\204\330\271\330\261\330\250\331\212\330\251", Q_NULLPTR));
         label_15->setText(QApplication::translate("MainWindow", "Hadith English", Q_NULLPTR));
+        label_14->setText(QApplication::translate("MainWindow", "<html><head/><body><p>\330\247\331\204\330\261\330\254\330\247\330\241 \331\210\330\266\330\271 \330\247\331\204\331\205\331\210\330\250\330\247\331\212\331\204 \330\271\331\204\331\211 \331\210\330\266\330\271\331\212\330\251 \330\247\331\204\330\265\330\247\331\205\330\252</p><p>Please put your Phone on Slient </p></body></html>", Q_NULLPTR));
+        AqamaLabelCounter->setText(QApplication::translate("MainWindow", "00", Q_NULLPTR));
+        time_remain_en->setText(QApplication::translate("MainWindow", "<html><head/><body><p>Time remain for Aqam</p></body></html>", Q_NULLPTR));
+        time_value->setText(QApplication::translate("MainWindow", "<html><head/><body><p>Minutes</p><p>\330\257\331\202\331\212\331\202\330\251</p></body></html>", Q_NULLPTR));
+        time_remain_ar->setText(QApplication::translate("MainWindow", "<html><head/><body><p>\330\247\331\204\331\210\331\202\330\252 \330\247\331\204\331\205\330\252\330\250\331\202\331\212 \331\204\330\245\331\202\330\247\331\205\330\251 \330\265\331\204\330\247\330\251 </p></body></html>", Q_NULLPTR));
     } // retranslateUi
 
 };

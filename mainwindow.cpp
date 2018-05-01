@@ -16,9 +16,28 @@
 #include<QVector>
 #include<time.h>
 
-using namespace  std;
 
+using namespace  std;
 QString PrintCalender(int d, int m, int y);
+inline void delay(int millisecondsWait);
+void MainWindow::aqamHideelement(){
+    ui->graphicsView->hide();
+    ui->graphicsView_2->hide();
+    ui->label_14->hide();
+    ui->AqamaLabelCounter->hide();
+    ui->time_remain_en->hide();
+    ui->time_value->hide();
+    ui->time_remain_ar->hide();
+}
+void MainWindow::aqamShowElement(){
+    ui->AqamaLabelCounter->show();
+    ui->graphicsView->show();
+    ui->graphicsView_2->show();
+    ui->label_14->show();
+    ui->time_remain_en->show();
+    ui->time_value->show();
+    ui->time_remain_ar->show();
+    }
 QString PrintCalend() {
     const time_t current_time = time(NULL);
     tm * t = localtime(&current_time);
@@ -133,9 +152,9 @@ QString PrintCalender(int d, int m, int y){
     while (d > IslamicDate(month, LastDayOfIslamicMonth(month, year), year))
         month++;
 
-    day = d - IslamicDate(month, 1, year) + 1;
+    day = d - IslamicDate(month, 1, year)+2;
     QString Hijri =QVariant(day).toString()+"-"+ getMonthName(month) +"-"+QVariant(year).toString() ;
-cout<<year<<"-"<<getMonthName(month)<<"-"<<day;
+//cout<<year<<"-"<<getMonthName(month)<<"-"<<day;
 
 return Hijri;
 }
@@ -147,15 +166,19 @@ void MainWindow::showTime()
     if ((time.second() % 2) == 0)
         text[2] = ' ';
     ui->min->setText(text);
-    //qDebug()<<time.toString();
-    if(time.toString()=="00:00:00")
+    if(ui->Fajer->text()=="00:00")
+        eventDayUpdate=true;
+    if(time.toString()=="00:01:00")
         eventDayUpdate=true;
     if(QDate::currentDate().month()!=storedMonth)
         eventMonthUpdate=true;
+
+
+          qDebug()<<QTime::currentTime().toString()<<eventAqama;
+
     if(eventDayUpdate)
     {
         get_info();
-        //ui->Magrib_3->setText(days_arabic[day_number]);
         QString* pray= new QString[7];
         pray=get_info();
 
@@ -166,7 +189,7 @@ void MainWindow::showTime()
         ui->Asr->setText(pray[3]);
         ui->Magrib->setText(pray[4]);
         ui->Asha->setText(pray[5]);
-        // Updating Hadith arabic and English with Automatic sizing of the fontjhv
+        // Updating Hadith arabic and English with Automatic sizing of the font
         ui->label_13->setText(pray[6]);
         ui->label_15->setText(pray[7]);
 
@@ -175,14 +198,90 @@ void MainWindow::showTime()
     }
     if(eventMonthUpdate)
     {
-        qDebug()<<"it works :"<<eventMonthUpdate;
+        //qDebug()<<"it works :"<<eventMonthUpdate<<storedMonth<<QDate::currentDate().month();
         grabbing_times();
         eventMonthUpdate=false;
         storedMonth=QDate::currentDate().month();
+
     }
 
+
+}
+void MainWindow::aqamEvent(){
+    QTime time = QTime::currentTime();
+    QString Fajer_con=ui->Fajer->text()+":00";
+    QString Dhuhr_con=ui->Duhur->text()+":00";
+    QString Asr_con=ui->Asr->text()+":00";
+    QString Magrib_con=ui->Magrib->text()+":00";
+    QString Ashaa_con=ui->Asha->text()+":00";
+    qDebug()<<Fajer_con<<Dhuhr_con<<Asr_con<<Magrib_con<<Ashaa_con;
+    if(time.toString()==Fajer_con){
+            eventAqama=true;
+            aqamaTime=30;
+            ui->time_remain_ar->setText("الوقت المتبقي لإقامة صلاة الفجر");
+            ui->time_remain_en->setText("Time remaining for Iqamah of Fajar Prayer");
+
+}
+    if(time.toString()==Dhuhr_con){
+        eventAqama=true;
+        aqamaTime=15;
+        ui->time_remain_ar->setText("الوقت المتبقي لإقامة صلاة الظهر");
+        ui->time_remain_en->setText("Time remaining for Iqamah of Dhuhr Prayer");
+
+    }
+    if(time.toString()==Asr_con){
+        eventAqama=true;
+        aqamaTime=15;
+        ui->time_remain_ar->setText("الوقت المتبقي لإقامة صلاة العصر");
+        ui->time_remain_en->setText("Time remaining for Iqamah of Assr Prayer");
+
+
+    }
+    if (time.toString()==Magrib_con)
+    {
+        eventAqama=true;
+        aqamaTime=15;
+        ui->time_remain_ar->setText("الوقت المتبقي لإقامة صلاة المغرب");
+        ui->time_remain_en->setText("Time remaining for Iqamah of Maghrib Prayer");
+
+    }
+    if (time.toString()==Ashaa_con)
+    {
+        eventAqama=true;
+        aqamaTime=15;
+        ui->time_remain_ar->setText("الوقت المتبقي لإقامة صلاة العشاء");
+        ui->time_remain_en->setText("Time remaining for Iqamah of Isha Prayer");
+
+    }
+    if(eventAqama)
+    {
+
+    for(int i=aqamaTime ; i>=0 ;--i)
+    {
+
+
+        QString counter=QVariant(i).toString();
+        aqamShowElement();
+        ui->AqamaLabelCounter->setText(counter);
+
+        delay(60000);
+       //  qDebug()<<"it works"<<eventAqama;
+
+    }
+    eventAqama=false;
+    aqamHideelement();
 }
 
+
+}
+inline void delay(int millisecondsWait)
+{
+    QEventLoop loop;
+    QTimer t;
+    t.connect(&t, &QTimer::timeout, &loop, &QEventLoop::quit);
+    t.start(millisecondsWait);
+    loop.exec();
+}
 void grabbing_times(){
 
     QUrl url = QUrl("https://www.gebetszeiten.de/Chemnitz/month/gebetszeiten-Chemnitz/169213-mwl86/");
@@ -210,9 +309,6 @@ void grabbing_times(){
     QWebElementCollection assr_elements = document.findAll(assr_search_elements);
     QWebElementCollection magrib_elements = document.findAll(magrib_search_elements);
     QWebElementCollection ishaa_elements = document.findAll(ishaa_search_elements);
-
-
-
     QRegExp rx("(\\ |\\,|\\.|\\t|\\n)");
     QStringList fajer_list;
     QStringList Shrouq_list;
@@ -232,12 +328,16 @@ void grabbing_times(){
     foreach (QWebElement assr, assr_elements){assr_list= assr.toPlainText().split(rx);for(int i=0;i<assr_list.size();i++){if(assr_list[i]=="'Assr"|| assr_list[i]=="*"){}else{assr_list_new.append(assr_list[i]);}}}
     foreach (QWebElement magrib, magrib_elements){magrib_list= magrib.toPlainText().split(rx);for(int i=0;i<magrib_list.size();i++){if(magrib_list[i]=="Maghrib"|| magrib_list[i]=="*"){}else{magrib_list_new.append(magrib_list[i]);}}}
     foreach (QWebElement ishaa, ishaa_elements){ishaa_list= ishaa.toPlainText().split(rx);for(int i=0;i<ishaa_list.size();i++){if(ishaa_list[i]=="Ischaa"|| ishaa_list[i]=="*"){}else{ishaa_list_new.append(ishaa_list[i]);}}}
-    qDebug()<<fajer_list_new;
-    qDebug()<<dhuhr_list_new;
-    qDebug()<<Shrouq_list_new;
-    qDebug()<<assr_list_new;
-    qDebug()<<magrib_list_new;
-    qDebug()<<ishaa_list_new;
+//    qDebug()<<fajer_list_new;
+//    qDebug()<<dhuhr_list_new;
+//    qDebug()<<Shrouq_list_new;
+//    qDebug()<<assr_list_new;
+//    qDebug()<<magrib_list_new;
+//    qDebug()<<ishaa_list_new;
+    //query to delete the table before we insert the new data for one month
+    QSqlQuery query_delete_table;
+    query_delete_table.prepare("TRUNCATE TABLE pry_table");
+    query_delete_table.exec();
     for(int i=0; i<fajer_list_new.size();i++){
         QString fajer=fajer_list_new[i];
         QString shrouq=Shrouq_list_new[i];
@@ -253,8 +353,7 @@ void grabbing_times(){
         QString ha="";
         QString he="";
 
-
-        query1.prepare("INSERT INTO `pry_table` (`date`, `fjr`, `shrq`, `dhr`, `asr`, `mgrb`, `ash`, `midnight`, `hadith_eng`, `hadith_de`) VALUES ('"+date+"', '"+fajer+"', '"+shrouq+"', '"+dhuhr+"', '"+assr+"', '"+mgrb+"', '"+ishaa+"', '', '"+ha+"', '"+he+"')");
+       query1.prepare("INSERT INTO `pry_table` (`date`, `fjr`, `shrq`, `dhr`, `asr`, `mgrb`, `ash`, `midnight`, `hadith_eng`, `hadith_de`) VALUES ('"+date+"', '"+fajer+"', '"+shrouq+"', '"+dhuhr+"', '"+assr+"', '"+mgrb+"', '"+ishaa+"', '', '"+ha+"', '"+he+"')");
         query1.bindValue("date",date);
         query1.bindValue("fajer",fajer);
         query1.bindValue("shrouq",shrouq);
@@ -265,6 +364,7 @@ void grabbing_times(){
         query1.bindValue("ha",ha);
         query1.bindValue("he",he);
         query1.exec();
+
 
 
 
@@ -282,8 +382,8 @@ void connect_database(){
     db.setDatabaseName("db_ib");
 
     if(db.open()){
-        msg.setText("the database connected");
-        msg.exec();
+//        msg.setText("the database connected");
+//        msg.exec();
     }
     else{
         msg.setText("the database unconnected");
@@ -342,17 +442,14 @@ MainWindow::MainWindow(QWidget *parent) :
     QTimer *timer = new QTimer();
     connect(timer, SIGNAL(timeout()),this,SLOT(showTime()));
     timer->start(1000);
+    QTimer *timerEvent = new QTimer();
+    connect(timerEvent, SIGNAL(timeout()),this,SLOT(aqamEvent()));
+    timerEvent->start(1000);
     QMainWindow::showFullScreen();
     QString Date_interface= QDate::currentDate().toString(Qt::ISODate);
     ui->Magrib_2->setText(Date_interface);
     ui->label_16->setText(PrintCalend());
-
-
-
-
-
-
-
+    aqamHideelement();
 }
 
 
@@ -364,12 +461,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-
     //just uncomment the next function for grabbing date from Gebetszeit
     grabbing_times();
-
-
-
-
-
 }

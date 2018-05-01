@@ -337,7 +337,8 @@ compiler_rcc_clean:
 	-$(DEL_FILE) qrc_resources.cpp
 qrc_resources.cpp: resources.qrc \
 		/usr/lib/arm-linux-gnueabihf/qt5/bin/rcc \
-		images/background-clock.jpg
+		images/background-clock.jpg \
+		images/No-Mobile-Phone-Sign.jpg
 	/usr/lib/arm-linux-gnueabihf/qt5/bin/rcc -name resources resources.qrc -o qrc_resources.cpp
 
 compiler_moc_header_make_all: moc_mainwindow.cpp moc_dynamicfontsizelabel.cpp
@@ -357,7 +358,8 @@ compiler_uic_make_all: ui_mainwindow.h
 compiler_uic_clean:
 	-$(DEL_FILE) ui_mainwindow.h
 ui_mainwindow.h: mainwindow.ui \
-		/usr/lib/arm-linux-gnueabihf/qt5/bin/uic
+		/usr/lib/arm-linux-gnueabihf/qt5/bin/uic \
+		dynamicfontsizelabel.h
 	/usr/lib/arm-linux-gnueabihf/qt5/bin/uic mainwindow.ui -o ui_mainwindow.h
 
 compiler_yacc_decl_make_all:
@@ -374,14 +376,15 @@ main.o: main.cpp mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp
 
 mainwindow.o: mainwindow.cpp mainwindow.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		dynamicfontsizelabel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o mainwindow.cpp
 
-dynamicfontsizelabel.o: src/dynamicfontsizelabel.cpp src/dynamicfontsizelabel.h
+dynamicfontsizelabel.o: src/dynamicfontsizelabel.cpp dynamicfontsizelabel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dynamicfontsizelabel.o src/dynamicfontsizelabel.cpp
 
 dynamicfontsizepushbutton.o: src/dynamicfontsizepushbutton.cpp src/dynamicfontsizepushbutton.h \
-		src/dynamicfontsizelabel.h
+		dynamicfontsizelabel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dynamicfontsizepushbutton.o src/dynamicfontsizepushbutton.cpp
 
 qrc_resources.o: qrc_resources.cpp 

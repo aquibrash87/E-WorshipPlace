@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/new/prefix1">
         <file>images/background-clock.jpg</file>
+        <file>images/No-Mobile-Phone-Sign.jpg</file>
     </qresource>
 </RCC>

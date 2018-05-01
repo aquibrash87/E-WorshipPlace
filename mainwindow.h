@@ -28,18 +28,18 @@ public:
      //flags for events
      bool eventDayUpdate=false;
      bool eventMonthUpdate=false;
+     bool eventAqama=false;
      int storedMonth=4;
-
-
-
-
-
+     int aqamaTime=15;
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
 private slots:
     void on_pushButton_clicked();
     void showTime();
+    void aqamEvent();
+    void aqamShowElement();
+    void aqamHideelement();
 
 
 private:

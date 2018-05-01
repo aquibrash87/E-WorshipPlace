@@ -14,6 +14,7 @@ QT += webkitwidgets
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 # Input
 CONFIG += c++11
+
 QT += widgets
 DEFINES += QT_DEPRECATED_WARNINGS
 HEADERS +=\
