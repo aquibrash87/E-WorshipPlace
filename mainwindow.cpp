@@ -15,6 +15,8 @@
 #include<QDateTime>
 #include<QVector>
 #include<time.h>
+#include<QSettings>
+#include"settings.h"
 
 
 using namespace  std;
@@ -173,14 +175,12 @@ void MainWindow::showTime()
     if(QDate::currentDate().month()!=storedMonth)
         eventMonthUpdate=true;
 
-
-          qDebug()<<QTime::currentTime().toString()<<eventAqama;
-
     if(eventDayUpdate)
     {
         get_info();
         QString* pray= new QString[7];
         pray=get_info();
+
 
         // Updating the times on current GUI
         ui->Fajer->setText(pray[0]);
@@ -193,15 +193,13 @@ void MainWindow::showTime()
         ui->label_13->setText(pray[6]);
         ui->label_15->setText(pray[7]);
 
-
         eventDayUpdate=false;
     }
     if(eventMonthUpdate)
     {
-        //qDebug()<<"it works :"<<eventMonthUpdate<<storedMonth<<QDate::currentDate().month();
         grabbing_times();
         eventMonthUpdate=false;
-        storedMonth=QDate::currentDate().month();
+        //Settings->setValue("Gerenal/StoredMonth",QDate::currentDate().month());
 
     }
 
@@ -425,7 +423,15 @@ QString* get_info(){struct QVariant;
         pray[5]=ash;
         pray[6]=ha;
         pray[7]=he;
+        QString Dir_setting_file=QApplication::applicationDirPath()+"/Settings.ini";
+        QSettings* Settings_Pro = new QSettings(Dir_setting_file, QSettings::IniFormat);
+       if(Settings_Pro->value("Prayer/CheckBox",false).toBool()==true){
+           int isha_Spec = Settings_Pro->value("Prayer/IshaTime",0).toInt();
+           QTime isha = QTime::fromString(pray[4],"hh:mm");
+           pray[5]=isha.addSecs(isha_Spec*60).toString("hh:mm");
+           qDebug()<<isha<<pray[5]<<isha_Spec;
 
+       }
         return pray;
                          }}
 
@@ -450,6 +456,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->Magrib_2->setText(Date_interface);
     ui->label_16->setText(PrintCalend());
     aqamHideelement();
+
 }
 
 
@@ -462,5 +469,9 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
     //just uncomment the next function for grabbing date from Gebetszeit
-    grabbing_times();
+   // grabbing_times();
+    Settings hello ;
+    hello.setModal(true);
+    hello.exec();
+
 }

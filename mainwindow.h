@@ -11,6 +11,9 @@
 #include<Qt>
 #include<QLocale>
 #include<QtWebKitWidgets/QWebFrame>
+#include<QSettings>
+#include<QApplication>
+
 
 QString *get_info();// function decleration
 void grabbing_times();
@@ -29,9 +32,11 @@ public:
      bool eventDayUpdate=false;
      bool eventMonthUpdate=false;
      bool eventAqama=false;
-     int storedMonth=4;
+     int storedMonth=5;
      int aqamaTime=15;
-    explicit MainWindow(QWidget *parent = 0);
+
+
+        explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
 private slots:
@@ -44,6 +49,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
 };
 
 #endif // MAINWINDOW_H

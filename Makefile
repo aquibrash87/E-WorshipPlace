@@ -51,16 +51,20 @@ OBJECTS_DIR   = ./
 SOURCES       = main.cpp \
 		mainwindow.cpp \
 		src/dynamicfontsizelabel.cpp \
-		src/dynamicfontsizepushbutton.cpp qrc_resources.cpp \
+		src/dynamicfontsizepushbutton.cpp \
+		settings.cpp qrc_resources.cpp \
 		moc_mainwindow.cpp \
-		moc_dynamicfontsizelabel.cpp
+		moc_dynamicfontsizelabel.cpp \
+		moc_settings.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		dynamicfontsizelabel.o \
 		dynamicfontsizepushbutton.o \
+		settings.o \
 		qrc_resources.o \
 		moc_mainwindow.o \
-		moc_dynamicfontsizelabel.o
+		moc_dynamicfontsizelabel.o \
+		moc_settings.o
 DIST          = /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/common/unix.conf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/common/linux.conf \
@@ -128,10 +132,12 @@ DIST          = /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/lex.prf \
 		datebase.pro mainwindow.h \
 		src/dynamicfontsizelabel.h \
-		src/dynamicfontsizepushbutton.h main.cpp \
+		src/dynamicfontsizepushbutton.h \
+		settings.h main.cpp \
 		mainwindow.cpp \
 		src/dynamicfontsizelabel.cpp \
-		src/dynamicfontsizepushbutton.cpp
+		src/dynamicfontsizepushbutton.cpp \
+		settings.cpp
 QMAKE_TARGET  = datebase
 DESTDIR       = 
 TARGET        = datebase
@@ -140,7 +146,7 @@ TARGET        = datebase
 first: all
 ####### Build rules
 
-$(TARGET): ui_mainwindow.h $(OBJECTS)  
+$(TARGET): ui_mainwindow.h ui_settings.h $(OBJECTS)  
 	$(LINK) $(LFLAGS) -o $(TARGET) $(OBJECTS) $(OBJCOMP) $(LIBS)
 
 Makefile: datebase.pro /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-clang/qmake.conf /usr/lib/arm-linux-gnueabihf/qt5/mkspecs/features/spec_pre.prf \
@@ -307,9 +313,9 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents resources.qrc $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.h src/dynamicfontsizelabel.h src/dynamicfontsizepushbutton.h $(DISTDIR)/
-	$(COPY_FILE) --parents main.cpp mainwindow.cpp src/dynamicfontsizelabel.cpp src/dynamicfontsizepushbutton.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents mainwindow.ui $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.h src/dynamicfontsizelabel.h src/dynamicfontsizepushbutton.h settings.h $(DISTDIR)/
+	$(COPY_FILE) --parents main.cpp mainwindow.cpp src/dynamicfontsizelabel.cpp src/dynamicfontsizepushbutton.cpp settings.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents mainwindow.ui settings.ui $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -341,9 +347,9 @@ qrc_resources.cpp: resources.qrc \
 		images/No-Mobile-Phone-Sign.jpg
 	/usr/lib/arm-linux-gnueabihf/qt5/bin/rcc -name resources resources.qrc -o qrc_resources.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_dynamicfontsizelabel.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_dynamicfontsizelabel.cpp moc_settings.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_dynamicfontsizelabel.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_dynamicfontsizelabel.cpp moc_settings.cpp
 moc_mainwindow.cpp: mainwindow.h \
 		/usr/lib/arm-linux-gnueabihf/qt5/bin/moc
 	/usr/lib/arm-linux-gnueabihf/qt5/bin/moc $(DEFINES) -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-clang -I/home/pi/takbeer -I/home/pi/takbeer -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWebKitWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtWebKit -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtSql -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/arm-linux-gnueabihf/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/arm-linux-gnueabihf/6/include -I/usr/local/include -I/usr/lib/gcc/arm-linux-gnueabihf/6/include-fixed -I/usr/include/arm-linux-gnueabihf -I/usr/include mainwindow.h -o moc_mainwindow.cpp
@@ -352,15 +358,23 @@ moc_dynamicfontsizelabel.cpp: src/dynamicfontsizelabel.h \
 		/usr/lib/arm-linux-gnueabihf/qt5/bin/moc
 	/usr/lib/arm-linux-gnueabihf/qt5/bin/moc $(DEFINES) -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-clang -I/home/pi/takbeer -I/home/pi/takbeer -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWebKitWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtWebKit -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtSql -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/arm-linux-gnueabihf/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/arm-linux-gnueabihf/6/include -I/usr/local/include -I/usr/lib/gcc/arm-linux-gnueabihf/6/include-fixed -I/usr/include/arm-linux-gnueabihf -I/usr/include src/dynamicfontsizelabel.h -o moc_dynamicfontsizelabel.cpp
 
+moc_settings.cpp: settings.h \
+		/usr/lib/arm-linux-gnueabihf/qt5/bin/moc
+	/usr/lib/arm-linux-gnueabihf/qt5/bin/moc $(DEFINES) -I/usr/lib/arm-linux-gnueabihf/qt5/mkspecs/linux-clang -I/home/pi/takbeer -I/home/pi/takbeer -I/usr/include/arm-linux-gnueabihf/qt5 -I/usr/include/arm-linux-gnueabihf/qt5/QtWebKitWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtWidgets -I/usr/include/arm-linux-gnueabihf/qt5/QtWebKit -I/usr/include/arm-linux-gnueabihf/qt5/QtGui -I/usr/include/arm-linux-gnueabihf/qt5/QtSql -I/usr/include/arm-linux-gnueabihf/qt5/QtNetwork -I/usr/include/arm-linux-gnueabihf/qt5/QtCore -I/usr/include/c++/6 -I/usr/include/arm-linux-gnueabihf/c++/6 -I/usr/include/c++/6/backward -I/usr/lib/gcc/arm-linux-gnueabihf/6/include -I/usr/local/include -I/usr/lib/gcc/arm-linux-gnueabihf/6/include-fixed -I/usr/include/arm-linux-gnueabihf -I/usr/include settings.h -o moc_settings.cpp
+
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
-compiler_uic_make_all: ui_mainwindow.h
+compiler_uic_make_all: ui_mainwindow.h ui_settings.h
 compiler_uic_clean:
-	-$(DEL_FILE) ui_mainwindow.h
+	-$(DEL_FILE) ui_mainwindow.h ui_settings.h
 ui_mainwindow.h: mainwindow.ui \
 		/usr/lib/arm-linux-gnueabihf/qt5/bin/uic \
 		dynamicfontsizelabel.h
 	/usr/lib/arm-linux-gnueabihf/qt5/bin/uic mainwindow.ui -o ui_mainwindow.h
+
+ui_settings.h: settings.ui \
+		/usr/lib/arm-linux-gnueabihf/qt5/bin/uic
+	/usr/lib/arm-linux-gnueabihf/qt5/bin/uic settings.ui -o ui_settings.h
 
 compiler_yacc_decl_make_all:
 compiler_yacc_decl_clean:
@@ -387,6 +401,10 @@ dynamicfontsizepushbutton.o: src/dynamicfontsizepushbutton.cpp src/dynamicfontsi
 		dynamicfontsizelabel.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o dynamicfontsizepushbutton.o src/dynamicfontsizepushbutton.cpp
 
+settings.o: settings.cpp settings.h \
+		ui_settings.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o settings.o settings.cpp
+
 qrc_resources.o: qrc_resources.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_resources.o qrc_resources.cpp
 
@@ -395,6 +413,9 @@ moc_mainwindow.o: moc_mainwindow.cpp
 
 moc_dynamicfontsizelabel.o: moc_dynamicfontsizelabel.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_dynamicfontsizelabel.o moc_dynamicfontsizelabel.cpp
+
+moc_settings.o: moc_settings.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_settings.o moc_settings.cpp
 
 ####### Install
 
