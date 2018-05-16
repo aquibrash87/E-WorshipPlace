@@ -20,8 +20,31 @@
 
 
 using namespace  std;
+//Settings sett;
 QString PrintCalender(int d, int m, int y);
 inline void delay(int millisecondsWait);
+void MainWindow::updateDayInterface(){
+        QString* pray= new QString[7];
+        pray=get_info();
+ ui->Fajer->setText(pray[0]);
+       // qDebug()<<pray[0]<<;
+        // Updating the times on current GUI
+        //MainWindow::ui->Fajer->setText("test");
+        ui->Shourq->setText(pray[1]);
+        ui->Duhur->setText(pray[2]);
+        ui->Asr->setText(pray[3]);
+        ui->Magrib->setText(pray[4]);
+        ui->Asha->setText(pray[5]);
+        // Updating Hadith arabic and English with Automatic sizing of the font
+        ui->label_13->setText(pray[6]);
+        ui->label_15->setText(pray[7]);
+
+}
+//void MainWindow::setter_triggerDayUpdate(bool x){
+//    qDebug()<<"function wroks"<<x;
+//    triggerDayUpdate=x;
+//      qDebug()<<"function wroks"<<triggerDayUpdate<<x;
+//}
 void MainWindow::aqamHideelement(){
     ui->graphicsView->hide();
     ui->graphicsView_2->hide();
@@ -165,8 +188,13 @@ void MainWindow::showTime()
      //qDebug()<<eventDayUpdate<<endl;
     QTime time =  QTime::currentTime();
     QString text = time.toString("hh:mm");
+    QString Date_interface= QDate::currentDate().toString(Qt::ISODate);
+    ui->Magrib_2->setText(Date_interface);
+    ui->label_16->setText(PrintCalend());
+//    qDebug()<<triggerDayUpdate;
     if ((time.second() % 2) == 0)
-        text[2] = ' ';
+        text[2] = ' ';        updateDayInterface();
+
     ui->min->setText(text);
     if(ui->Fajer->text()=="00:00")
         eventDayUpdate=true;
@@ -174,24 +202,14 @@ void MainWindow::showTime()
         eventDayUpdate=true;
     if(QDate::currentDate().month()!=storedMonth)
         eventMonthUpdate=true;
-
+//    if(sett.tests()==true){
+//        updateDayInterface();
+//       // sett->triggerDayUpdate=false;
+//        qDebug()<<"it triggered";
+//    }
     if(eventDayUpdate)
     {
-        get_info();
-        QString* pray= new QString[7];
-        pray=get_info();
-
-
-        // Updating the times on current GUI
-        ui->Fajer->setText(pray[0]);
-        ui->Shourq->setText(pray[1]);
-        ui->Duhur->setText(pray[2]);
-        ui->Asr->setText(pray[3]);
-        ui->Magrib->setText(pray[4]);
-        ui->Asha->setText(pray[5]);
-        // Updating Hadith arabic and English with Automatic sizing of the font
-        ui->label_13->setText(pray[6]);
-        ui->label_15->setText(pray[7]);
+       // updateDayInterface();
 
         eventDayUpdate=false;
     }
@@ -212,7 +230,7 @@ void MainWindow::aqamEvent(){
     QString Asr_con=ui->Asr->text()+":00";
     QString Magrib_con=ui->Magrib->text()+":00";
     QString Ashaa_con=ui->Asha->text()+":00";
-    qDebug()<<Fajer_con<<Dhuhr_con<<Asr_con<<Magrib_con<<Ashaa_con;
+   // qDebug()<<Fajer_con<<Dhuhr_con<<Asr_con<<Magrib_con<<Ashaa_con;
     if(time.toString()==Fajer_con){
             eventAqama=true;
             aqamaTime=30;
@@ -238,7 +256,7 @@ void MainWindow::aqamEvent(){
     if (time.toString()==Magrib_con)
     {
         eventAqama=true;
-        aqamaTime=15;
+        aqamaTime=5;
         ui->time_remain_ar->setText("الوقت المتبقي لإقامة صلاة المغرب");
         ui->time_remain_en->setText("Time remaining for Iqamah of Maghrib Prayer");
 
@@ -254,7 +272,7 @@ void MainWindow::aqamEvent(){
     if(eventAqama)
     {
 
-    for(int i=aqamaTime ; i>=0 ;--i)
+    for(int i=aqamaTime ; i>=1 ;--i)
     {
 
 
@@ -263,7 +281,6 @@ void MainWindow::aqamEvent(){
         ui->AqamaLabelCounter->setText(counter);
 
         delay(60000);
-       //  qDebug()<<"it works"<<eventAqama;
 
     }
     eventAqama=false;
@@ -280,9 +297,11 @@ inline void delay(int millisecondsWait)
     t.start(millisecondsWait);
     loop.exec();
 }
+
+
 void grabbing_times(){
 
-    QUrl url = QUrl("https://www.gebetszeiten.de/Chemnitz/month/gebetszeiten-Chemnitz/169213-mwl86/");
+    QUrl url = QUrl("https://www.gebetszeiten.de/Chemnitz/gebetszeiten-Chemnitz/169213-dit17de");
     QWebView *view = new QWebView();
     view->load(url);
     QString fajer_search_elements="tr.fajrRow";
@@ -375,7 +394,7 @@ void connect_database(){
     QMessageBox msg;
     QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("localhost");
-    db.setUserName("ibrahim");
+    db.setUserName("root");
     db.setPassword("root");
     db.setDatabaseName("db_ib");
 
@@ -429,7 +448,7 @@ QString* get_info(){struct QVariant;
            int isha_Spec = Settings_Pro->value("Prayer/IshaTime",0).toInt();
            QTime isha = QTime::fromString(pray[4],"hh:mm");
            pray[5]=isha.addSecs(isha_Spec*60).toString("hh:mm");
-           qDebug()<<isha<<pray[5]<<isha_Spec;
+         //  qDebug()<<isha<<pray[5]<<isha_Spec;
 
        }
         return pray;
@@ -452,10 +471,9 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(timerEvent, SIGNAL(timeout()),this,SLOT(aqamEvent()));
     timerEvent->start(1000);
     QMainWindow::showFullScreen();
-    QString Date_interface= QDate::currentDate().toString(Qt::ISODate);
-    ui->Magrib_2->setText(Date_interface);
-    ui->label_16->setText(PrintCalend());
+
     aqamHideelement();
+
 
 }
 
@@ -470,8 +488,8 @@ void MainWindow::on_pushButton_clicked()
 {
     //just uncomment the next function for grabbing date from Gebetszeit
    // grabbing_times();
-    Settings hello ;
-    hello.setModal(true);
-    hello.exec();
+    Settings settingForm ;
+    settingForm.setModal(true);
+    settingForm.exec();
 
 }

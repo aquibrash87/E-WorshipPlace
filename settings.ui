@@ -23,12 +23,51 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab">
     <attribute name="title">
      <string>Gerenal</string>
     </attribute>
+    <widget class="QGroupBox" name="Grabbing_GBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>171</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Grabbing Data</string>
+     </property>
+     <widget class="QPushButton" name="Grabbing_PButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>141</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Grabbing Month</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Grabbing_Day_PButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>70</y>
+        <width>141</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Grabbing Day</string>
+      </property>
+     </widget>
+    </widget>
    </widget>
    <widget class="QWidget" name="tab_2">
     <attribute name="title">

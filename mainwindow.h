@@ -25,7 +25,6 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-
 public:
      QSqlQuery  query;
      //flags for events
@@ -34,6 +33,11 @@ public:
      bool eventAqama=false;
      int storedMonth=5;
      int aqamaTime=15;
+     void updateDayInterface();
+   // void setter_triggerDayUpdate(const bool x){triggerDayUpdate=x;}
+
+    bool triggerDayUpdate=false;
+
 
 
         explicit MainWindow(QWidget *parent = 0);
@@ -47,9 +51,9 @@ private slots:
     void aqamHideelement();
 
 
+
 private:
     Ui::MainWindow *ui;
-
 };
 
 #endif // MAINWINDOW_H

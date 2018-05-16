@@ -38,3 +38,13 @@ void Settings::on_save_push_clicked()
     Settings_Pro->setValue("Prayer/CheckBox",ui->checkBox->isChecked());
 
 }
+
+void Settings::on_Grabbing_PButton_clicked()
+{
+    grabbing_times();
+}
+
+void Settings::on_Grabbing_Day_PButton_clicked()
+{
+//triggerDayUpdate=true;
+}

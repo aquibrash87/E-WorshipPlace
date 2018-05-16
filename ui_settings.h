@@ -30,6 +30,9 @@ class Ui_Settings
 public:
     QTabWidget *tabWidget;
     QWidget *tab;
+    QGroupBox *Grabbing_GBox;
+    QPushButton *Grabbing_PButton;
+    QPushButton *Grabbing_Day_PButton;
     QWidget *tab_2;
     QGroupBox *groupBox;
     QCheckBox *checkBox;
@@ -47,6 +50,15 @@ public:
         tabWidget->setGeometry(QRect(20, 0, 591, 371));
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
+        Grabbing_GBox = new QGroupBox(tab);
+        Grabbing_GBox->setObjectName(QStringLiteral("Grabbing_GBox"));
+        Grabbing_GBox->setGeometry(QRect(10, 10, 171, 121));
+        Grabbing_PButton = new QPushButton(Grabbing_GBox);
+        Grabbing_PButton->setObjectName(QStringLiteral("Grabbing_PButton"));
+        Grabbing_PButton->setGeometry(QRect(10, 30, 141, 29));
+        Grabbing_Day_PButton = new QPushButton(Grabbing_GBox);
+        Grabbing_Day_PButton->setObjectName(QStringLiteral("Grabbing_Day_PButton"));
+        Grabbing_Day_PButton->setGeometry(QRect(10, 70, 141, 29));
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QStringLiteral("tab_2"));
@@ -69,7 +81,7 @@ public:
 
         retranslateUi(Settings);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(Settings);
@@ -78,6 +90,9 @@ public:
     void retranslateUi(QDialog *Settings)
     {
         Settings->setWindowTitle(QApplication::translate("Settings", "Settings", Q_NULLPTR));
+        Grabbing_GBox->setTitle(QApplication::translate("Settings", "Grabbing Data", Q_NULLPTR));
+        Grabbing_PButton->setText(QApplication::translate("Settings", "Grabbing Month", Q_NULLPTR));
+        Grabbing_Day_PButton->setText(QApplication::translate("Settings", "Grabbing Day", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("Settings", "Gerenal", Q_NULLPTR));
         groupBox->setTitle(QApplication::translate("Settings", "Specific Time for Isha", Q_NULLPTR));
         checkBox->setText(QApplication::translate("Settings", "Active ", Q_NULLPTR));

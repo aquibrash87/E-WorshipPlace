@@ -1,0 +1,11 @@
+QMAKE_DEFAULT_INCDIRS = \
+    /usr/include/c++/6.3.0 \
+    /usr/include/arm-linux-gnueabihf/c++/6.3.0 \
+    /usr/include/c++/6.3.0/backward \
+    /usr/local/include \
+    /usr/local/clang_6.0.0/lib/clang/6.0.0/include \
+    /usr/include/arm-linux-gnueabihf \
+    /usr/include
+QMAKE_DEFAULT_LIBDIRS = \
+    /lib \
+    /usr/lib

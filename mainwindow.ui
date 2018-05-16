@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1680</width>
-    <height>1050</height>
+    <width>1204</width>
+    <height>684</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -48,28 +48,31 @@ color:rgb(239, 41, 41);
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>1020</y>
-      <width>61</width>
-      <height>29</height>
+      <x>10</x>
+      <y>660</y>
+      <width>41</width>
+      <height>21</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="text">
-     <string>G</string>
+     <string>Set</string>
     </property>
    </widget>
    <widget class="QLabel" name="Magrib_2">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>180</y>
+      <x>170</x>
+      <y>130</y>
       <width>301</width>
       <height>61</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(239, 41, 41);
-font: 75 36pt &quot;Al-Jazeera-Arabic&quot;;</string>
+font: 75 33pt &quot;Al-Jazeera-Arabic&quot;;</string>
     </property>
     <property name="text">
      <string>Date</string>
@@ -81,17 +84,15 @@ font: 75 36pt &quot;Al-Jazeera-Arabic&quot;;</string>
    <widget class="QLabel" name="Fajer">
     <property name="geometry">
      <rect>
-      <x>1180</x>
-      <y>30</y>
-      <width>161</width>
+      <x>840</x>
+      <y>10</y>
+      <width>111</width>
       <height>62</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">
-color:rgb(239, 41, 41);
-	font: 75 41pt &quot;Serif&quot;;
-</string>
+     <string notr="true">color:rgb(239, 41, 41);
+	font: 75 35pt &quot;Serif&quot;;</string>
     </property>
     <property name="text">
      <string>00:00</string>
@@ -100,17 +101,15 @@ color:rgb(239, 41, 41);
    <widget class="QLabel" name="Shourq">
     <property name="geometry">
      <rect>
-      <x>1180</x>
-      <y>120</y>
-      <width>191</width>
-      <height>76</height>
+      <x>840</x>
+      <y>70</y>
+      <width>111</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">
-color:rgb(239, 41, 41);
-	font: 75 41pt &quot;Serif&quot;;
-</string>
+     <string notr="true">color:rgb(239, 41, 41);
+	font: 75 35pt &quot;Serif&quot;;</string>
     </property>
     <property name="text">
      <string>00:00</string>
@@ -119,17 +118,15 @@ color:rgb(239, 41, 41);
    <widget class="QLabel" name="Duhur">
     <property name="geometry">
      <rect>
-      <x>1180</x>
-      <y>230</y>
-      <width>191</width>
+      <x>840</x>
+      <y>140</y>
+      <width>111</width>
       <height>61</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">
-color:rgb(239, 41, 41);
-	font: 75 41pt &quot;Serif&quot;;
-</string>
+     <string notr="true">color:rgb(239, 41, 41);
+	font: 75 35pt &quot;Serif&quot;;</string>
     </property>
     <property name="text">
      <string>00:00</string>
@@ -138,17 +135,15 @@ color:rgb(239, 41, 41);
    <widget class="QLabel" name="Asr">
     <property name="geometry">
      <rect>
-      <x>1180</x>
-      <y>340</y>
-      <width>161</width>
+      <x>840</x>
+      <y>210</y>
+      <width>111</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">
-color:rgb(239, 41, 41);
-	font: 75 41pt &quot;Serif&quot;;
-</string>
+     <string notr="true">color:rgb(239, 41, 41);
+	font: 75 35pt &quot;Serif&quot;;</string>
     </property>
     <property name="text">
      <string>00:00</string>
@@ -157,17 +152,15 @@ color:rgb(239, 41, 41);
    <widget class="QLabel" name="Magrib">
     <property name="geometry">
      <rect>
-      <x>1180</x>
-      <y>430</y>
-      <width>201</width>
+      <x>840</x>
+      <y>260</y>
+      <width>111</width>
       <height>71</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">
-color:rgb(239, 41, 41);
-	font: 75 41pt &quot;Serif&quot;;
-</string>
+     <string notr="true">color:rgb(239, 41, 41);
+	font: 75 35pt &quot;Serif&quot;;</string>
     </property>
     <property name="text">
      <string>00:00</string>
@@ -176,15 +169,15 @@ color:rgb(239, 41, 41);
    <widget class="QLabel" name="Asha">
     <property name="geometry">
      <rect>
-      <x>1180</x>
-      <y>540</y>
-      <width>191</width>
+      <x>840</x>
+      <y>340</y>
+      <width>121</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color:rgb(239, 41, 41);
-	font: 75 41pt &quot;Serif&quot;;</string>
+	font: 75 35pt &quot;Serif&quot;;</string>
     </property>
     <property name="text">
      <string>00:00</string>
@@ -193,15 +186,15 @@ color:rgb(239, 41, 41);
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>1390</x>
+      <x>1010</x>
       <y>10</y>
-      <width>131</width>
-      <height>91</height>
+      <width>81</width>
+      <height>61</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
-font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;</string>
+font: 75 25pt &quot;Al-Jazeera-Arabic&quot;;</string>
     </property>
     <property name="text">
      <string>الفجر</string>
@@ -210,15 +203,15 @@ font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;</string>
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>1390</x>
-      <y>110</y>
-      <width>141</width>
-      <height>81</height>
+      <x>1020</x>
+      <y>80</y>
+      <width>81</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
-font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;</string>
+font: 75 25pt &quot;Al-Jazeera-Arabic&quot;;</string>
     </property>
     <property name="text">
      <string>شروق</string>
@@ -227,15 +220,15 @@ font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;</string>
    <widget class="QLabel" name="label_9">
     <property name="geometry">
      <rect>
-      <x>1390</x>
-      <y>220</y>
-      <width>141</width>
-      <height>71</height>
+      <x>1010</x>
+      <y>140</y>
+      <width>91</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
-font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;</string>
+font: 75 25pt &quot;Al-Jazeera-Arabic&quot;;</string>
     </property>
     <property name="text">
      <string>الظهر</string>
@@ -244,15 +237,15 @@ font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;</string>
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
-      <x>1400</x>
-      <y>310</y>
-      <width>131</width>
-      <height>71</height>
+      <x>1020</x>
+      <y>210</y>
+      <width>81</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
-font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;</string>
+font: 75 25pt &quot;Al-Jazeera-Arabic&quot;;</string>
     </property>
     <property name="text">
      <string>العصر</string>
@@ -261,15 +254,15 @@ font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;</string>
    <widget class="QLabel" name="label_11">
     <property name="geometry">
      <rect>
-      <x>1380</x>
-      <y>410</y>
-      <width>161</width>
-      <height>81</height>
+      <x>1000</x>
+      <y>270</y>
+      <width>101</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
-font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;</string>
+font: 75 25pt &quot;Al-Jazeera-Arabic&quot;;</string>
     </property>
     <property name="text">
      <string>المغرب</string>
@@ -278,15 +271,15 @@ font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;</string>
    <widget class="QLabel" name="label_12">
     <property name="geometry">
      <rect>
-      <x>1390</x>
-      <y>530</y>
-      <width>151</width>
-      <height>71</height>
+      <x>1000</x>
+      <y>340</y>
+      <width>101</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
-font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;</string>
+font: 75 25pt &quot;Al-Jazeera-Arabic&quot;;</string>
     </property>
     <property name="text">
      <string>العشاء</string>
@@ -295,34 +288,34 @@ font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;</string>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>910</x>
-      <y>530</y>
-      <width>197</width>
+      <x>660</x>
+      <y>330</y>
+      <width>111</width>
       <height>62</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
-font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;
+font: 75 25pt &quot;Al-Jazeera-Arabic&quot;;
 
 </string>
     </property>
     <property name="text">
-     <string>Ashaa</string>
+     <string>Ishaa</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>940</x>
-      <y>30</y>
-      <width>151</width>
+      <x>680</x>
+      <y>0</y>
+      <width>111</width>
       <height>76</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
-font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;
+font: 75 25pt &quot;Al-Jazeera-Arabic&quot;;
 
 </string>
     </property>
@@ -333,15 +326,15 @@ font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>896</x>
-      <y>120</y>
-      <width>211</width>
+      <x>660</x>
+      <y>60</y>
+      <width>141</width>
       <height>96</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
-font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;
+font: 75 25pt &quot;Al-Jazeera-Arabic&quot;;
 
 </string>
     </property>
@@ -352,15 +345,15 @@ font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>920</x>
-      <y>240</y>
-      <width>197</width>
+      <x>660</x>
+      <y>150</y>
+      <width>121</width>
       <height>54</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
-font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;
+font: 75 25pt &quot;Al-Jazeera-Arabic&quot;;
 
 </string>
     </property>
@@ -371,15 +364,15 @@ font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>940</x>
-      <y>320</y>
+      <x>680</x>
+      <y>200</y>
       <width>101</width>
       <height>84</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
-font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;
+font: 75 25pt &quot;Al-Jazeera-Arabic&quot;;
 
 </string>
     </property>
@@ -390,15 +383,15 @@ font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>886</x>
-      <y>430</y>
-      <width>211</width>
+      <x>650</x>
+      <y>270</y>
+      <width>131</width>
       <height>61</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(255, 255, 255);
-font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;
+font: 75 25pt &quot;Al-Jazeera-Arabic&quot;;
 
 </string>
     </property>
@@ -409,23 +402,23 @@ font: 75 40pt &quot;Al-Jazeera-Arabic&quot;;
    <widget class="QLabel" name="min">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>20</y>
-      <width>381</width>
-      <height>181</height>
+      <x>190</x>
+      <y>10</y>
+      <width>341</width>
+      <height>121</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>Al-Jazeera-Arabic</family>
-      <pointsize>100</pointsize>
+      <pointsize>85</pointsize>
       <weight>9</weight>
       <italic>false</italic>
       <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 75 100pt &quot;Al-Jazeera-Arabic&quot;;
+     <string notr="true">font: 75 85pt &quot;Al-Jazeera-Arabic&quot;;
 color: rgb(239, 41, 41);
 </string>
     </property>
@@ -436,9 +429,9 @@ color: rgb(239, 41, 41);
    <widget class="QLabel" name="label_16">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>240</y>
-      <width>531</width>
+      <x>150</x>
+      <y>180</y>
+      <width>361</width>
       <height>61</height>
      </rect>
     </property>
@@ -447,7 +440,7 @@ color: rgb(239, 41, 41);
     </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(239, 41, 41);
-font: 75 36pt &quot;Al-Jazeera-Arabic&quot;;
+font: 75 33pt &quot;Al-Jazeera-Arabic&quot;;
 center
 </string>
     </property>
@@ -464,10 +457,10 @@ center
    <widget class="DynamicFontSizeLabel" name="label_13">
     <property name="geometry">
      <rect>
-      <x>140</x>
-      <y>680</y>
-      <width>1231</width>
-      <height>131</height>
+      <x>100</x>
+      <y>440</y>
+      <width>881</width>
+      <height>101</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -506,10 +499,10 @@ center
    <widget class="DynamicFontSizeLabel" name="label_15">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>830</y>
-      <width>1161</width>
-      <height>131</height>
+      <x>250</x>
+      <y>540</y>
+      <width>851</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -570,10 +563,10 @@ center
    <widget class="QGraphicsView" name="graphicsView_2">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>470</y>
-      <width>291</width>
-      <height>321</height>
+      <x>150</x>
+      <y>480</y>
+      <width>171</width>
+      <height>171</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -586,27 +579,30 @@ center
    <widget class="QLabel" name="label_14">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>520</y>
-      <width>1221</width>
-      <height>241</height>
+      <x>330</x>
+      <y>480</y>
+      <width>831</width>
+      <height>201</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 75 52pt &quot;Al-Jazeera-Arabic&quot;;</string>
+     <string notr="true">font: 75 20pt &quot;Al-Jazeera-Arabic&quot;;</string>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;الرجاء وضع الموبايل على وضعية الصامت&lt;/p&gt;&lt;p&gt;Please put your Phone on Slient &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;الرجاء وضع الموبايل على وضعية الصامت&lt;/p&gt;&lt;p&gt;Please Be Sure Cell Phones Are into Silent Mode&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
     <property name="textFormat">
      <enum>Qt::RichText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="AqamaLabelCounter">
     <property name="geometry">
      <rect>
-      <x>1020</x>
-      <y>270</y>
+      <x>810</x>
+      <y>260</y>
       <width>361</width>
       <height>221</height>
      </rect>
@@ -624,10 +620,10 @@ center
    <widget class="DynamicFontSizeLabel" name="time_remain_en">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>40</y>
-      <width>801</width>
-      <height>111</height>
+      <x>570</x>
+      <y>180</y>
+      <width>621</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
@@ -651,8 +647,8 @@ center
    <widget class="QLabel" name="time_value">
     <property name="geometry">
      <rect>
-      <x>900</x>
-      <y>320</y>
+      <x>660</x>
+      <y>310</y>
       <width>131</width>
       <height>101</height>
      </rect>
@@ -673,14 +669,14 @@ center
    <widget class="QLabel" name="time_remain_ar">
     <property name="geometry">
      <rect>
-      <x>690</x>
-      <y>140</y>
-      <width>861</width>
+      <x>580</x>
+      <y>50</y>
+      <width>591</width>
       <height>111</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 75 45pt &quot;Al-Jazeera-Arabic&quot;;</string>
+     <string notr="true">font: 75 30pt &quot;Al-Jazeera-Arabic&quot;;</string>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;الوقت المتبقي لإقامة صلاة &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -692,37 +688,54 @@ center
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <zorder>Shourq</zorder>
-   <zorder>Asha</zorder>
-   <zorder>Asr</zorder>
-   <zorder>Fajer</zorder>
-   <zorder>Duhur</zorder>
-   <zorder>Magrib</zorder>
-   <zorder>graphicsView</zorder>
-   <zorder>pushButton</zorder>
-   <zorder>label_9</zorder>
-   <zorder>label_2</zorder>
-   <zorder>label_3</zorder>
-   <zorder>Magrib_2</zorder>
-   <zorder>label_10</zorder>
-   <zorder>label_11</zorder>
-   <zorder>label_12</zorder>
-   <zorder>label_8</zorder>
-   <zorder>label_4</zorder>
-   <zorder>label_5</zorder>
-   <zorder>label_6</zorder>
-   <zorder>label_7</zorder>
-   <zorder>label</zorder>
-   <zorder>min</zorder>
-   <zorder>label_16</zorder>
+   <widget class="DynamicFontSizeLabel" name="event">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>320</y>
+      <width>501</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255, 255, 255);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <zorder>label_13</zorder>
    <zorder>label_15</zorder>
+   <zorder>label_4</zorder>
+   <zorder>label_12</zorder>
+   <zorder>label_11</zorder>
+   <zorder>label_3</zorder>
+   <zorder>label_9</zorder>
+   <zorder>label_8</zorder>
+   <zorder>label_10</zorder>
+   <zorder>Magrib</zorder>
+   <zorder>Asr</zorder>
+   <zorder>Shourq</zorder>
+   <zorder>Fajer</zorder>
+   <zorder>Asha</zorder>
+   <zorder>Duhur</zorder>
+   <zorder>graphicsView</zorder>
+   <zorder>pushButton</zorder>
    <zorder>graphicsView_2</zorder>
    <zorder>label_14</zorder>
    <zorder>AqamaLabelCounter</zorder>
    <zorder>time_remain_en</zorder>
    <zorder>time_value</zorder>
    <zorder>time_remain_ar</zorder>
+   <zorder>label_6</zorder>
+   <zorder>label_5</zorder>
+   <zorder>label_2</zorder>
+   <zorder>label</zorder>
+   <zorder>label_7</zorder>
+   <zorder>Magrib_2</zorder>
+   <zorder>label_16</zorder>
+   <zorder>min</zorder>
+   <zorder>event</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
