@@ -177,7 +177,7 @@ QString PrintCalender(int d, int m, int y){
     while (d > IslamicDate(month, LastDayOfIslamicMonth(month, year), year))
         month++;
 
-    day = d - IslamicDate(month, 1, year)+2;
+    day = d - IslamicDate(month, 1, year);// adding days for hijri month by + and -
     QString Hijri =QVariant(day).toString()+"-"+ getMonthName(month) +"-"+QVariant(year).toString() ;
 //cout<<year<<"-"<<getMonthName(month)<<"-"<<day;
 
