@@ -240,7 +240,7 @@ public:
         label_13->setWordWrap(true);
         label_15 = new DynamicFontSizeLabel(centralWidget);
         label_15->setObjectName(QStringLiteral("label_15"));
-        label_15->setGeometry(QRect(250, 540, 851, 91));
+        label_15->setGeometry(QRect(290, 530, 871, 91));
         sizePolicy1.setHeightForWidth(label_15->sizePolicy().hasHeightForWidth());
         label_15->setSizePolicy(sizePolicy1);
         label_15->setMinimumSize(QSize(400, 50));
@@ -300,7 +300,6 @@ public:
         event->setStyleSheet(QStringLiteral("color: rgb(255, 255, 255);"));
         MainWindow->setCentralWidget(centralWidget);
         label_13->raise();
-        label_15->raise();
         label_4->raise();
         label_12->raise();
         label_11->raise();
@@ -331,6 +330,7 @@ public:
         label_16->raise();
         min->raise();
         event->raise();
+        label_15->raise();
 
         retranslateUi(MainWindow);
 

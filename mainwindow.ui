@@ -499,9 +499,9 @@ center
    <widget class="DynamicFontSizeLabel" name="label_15">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>540</y>
-      <width>851</width>
+      <x>290</x>
+      <y>530</y>
+      <width>871</width>
       <height>91</height>
      </rect>
     </property>
@@ -705,7 +705,6 @@ center
     </property>
    </widget>
    <zorder>label_13</zorder>
-   <zorder>label_15</zorder>
    <zorder>label_4</zorder>
    <zorder>label_12</zorder>
    <zorder>label_11</zorder>
@@ -736,6 +735,7 @@ center
    <zorder>label_16</zorder>
    <zorder>min</zorder>
    <zorder>event</zorder>
+   <zorder>label_15</zorder>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

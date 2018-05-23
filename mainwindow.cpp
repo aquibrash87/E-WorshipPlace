@@ -233,7 +233,7 @@ void MainWindow::aqamEvent(){
    // qDebug()<<Fajer_con<<Dhuhr_con<<Asr_con<<Magrib_con<<Ashaa_con;
     if(time.toString()==Fajer_con){
             eventAqama=true;
-            aqamaTime=30;
+            aqamaTime=20;
             ui->time_remain_ar->setText("الوقت المتبقي لإقامة صلاة الفجر");
             ui->time_remain_en->setText("Time remaining for Iqamah of Fajar Prayer");
 
@@ -264,7 +264,7 @@ void MainWindow::aqamEvent(){
     if (time.toString()==Ashaa_con)
     {
         eventAqama=true;
-        aqamaTime=15;
+        aqamaTime=5;
         ui->time_remain_ar->setText("الوقت المتبقي لإقامة صلاة العشاء");
         ui->time_remain_en->setText("Time remaining for Iqamah of Isha Prayer");
 
