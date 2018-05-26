@@ -240,7 +240,7 @@ public:
         label_13->setWordWrap(true);
         label_15 = new DynamicFontSizeLabel(centralWidget);
         label_15->setObjectName(QStringLiteral("label_15"));
-        label_15->setGeometry(QRect(290, 530, 871, 91));
+        label_15->setGeometry(QRect(280, 550, 851, 91));
         sizePolicy1.setHeightForWidth(label_15->sizePolicy().hasHeightForWidth());
         label_15->setSizePolicy(sizePolicy1);
         label_15->setMinimumSize(QSize(400, 50));

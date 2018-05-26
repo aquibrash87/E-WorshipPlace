@@ -499,9 +499,9 @@ center
    <widget class="DynamicFontSizeLabel" name="label_15">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>530</y>
-      <width>871</width>
+      <x>280</x>
+      <y>550</y>
+      <width>851</width>
       <height>91</height>
      </rect>
     </property>
