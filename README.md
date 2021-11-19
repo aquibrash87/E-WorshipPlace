@@ -1,4 +1,4 @@
-# Takbeer
+# Setup Instructions
 Prayer timing stand alone project based on qt on Raspberry pi. Uses Gebetszeiten.de as source for monthly database query , which updates the database for the complete month. 
 
 Install:
